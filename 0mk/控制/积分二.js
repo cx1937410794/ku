@@ -246,7 +246,7 @@ function 继续学习音频课() {
         sleep(3000);
     };
     //查看音频数量是否够
-    while (className("android.widget.TextView").id("tv_collection").findOne().text().match(/[0-9]+/)[0] < 150) {
+    while (className("android.widget.TextView").id("tv_collection").findOne().text().match(/[0-9]+/)[0] < 100) {
         log("数量只有" + className("android.widget.TextView").id("tv_collection").findOne().text().match(/[0-9]+/)[0] + ",再向下找找.");
         let X坐标 = className("androidx.recyclerview.widget.RecyclerView").id("recycler_view").findOne().bounds().centerX();
         let Y坐标 = className("androidx.recyclerview.widget.RecyclerView").id("recycler_view").findOne().bounds().top;//顶
