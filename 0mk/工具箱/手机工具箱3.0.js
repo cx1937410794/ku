@@ -126,7 +126,7 @@ ui.layout(
             </viewpager>
         </vertical>
         <vertical layout_gravity="left|center_vertical" w="280" bg='#000000'>
-            <img w="280" h="200" scaleType="fitXY" src="http://zuoxiaozi.top/0mk/工具箱/微信名片.jpg" />
+            <img w="280" h="200" scaleType="fitXY" src="http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/微信名片.jpg" />
             <list id="menu">
                 <horizontal bg="?selectableItemBackground" w="*" textColor="#222222">
                     <img w="50" h="50" padding="16" src="{{this.icon}}" tint="#2288ff" />
@@ -233,7 +233,7 @@ function 一键授权内容() {
     let 取设备机器码 = $crypto.digest(获取ID(), "MD5")
     threads.start(function () {
         function 到期时间() {
-            let res = http.get("zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
@@ -261,7 +261,7 @@ function 一键授权内容() {
         let 结果i = 到期时间() - (网络时间());
         // alert(结果i, 到期时间(), 网络时间())
         if (结果i > 0) {
-            let res = http.get("zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
@@ -280,7 +280,7 @@ function 一键授权内容() {
             return;
             // idlujing.put("idlujing", $crypto.digest(获取ID(), "MD5")); //存ID
         } else if (0 > 结果i) {
-            let res = http.get("zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
@@ -306,7 +306,7 @@ ui.复制按钮.on('click', () => {//复制机器码
     });
 });
 function 公告内容() {
-    let res = http.get("zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+    let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
     if (res.statusCode != 200) {
         alert("❌获取失败: " + res.statusCode);
         return;
@@ -352,11 +352,11 @@ function 加载功能(网址) {
         alert("请先在首页验证助手权限.")
     };
 };
-ui.刷步数按钮.on('click', () => { 加载功能("zuoxiaozi.top/0mk/工具箱/功能/微信刷步数.js"); });
+ui.刷步数按钮.on('click', () => { 加载功能("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/功能/微信刷步数.js"); });
 
-ui.新学习强国.on('click', () => { 加载功能("zuoxiaozi.top/0mk/工具箱/新学习强国/UI.js"); });
+ui.新学习强国.on('click', () => { 加载功能("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/新学习强国/UI.js"); });
 
-ui.一键钉钉打卡.on('click', () => { 加载功能("zuoxiaozi.top/0mk/工具箱/功能/钉钉自动打卡/每周定时任务.js"); });
+ui.一键钉钉打卡.on('click', () => { 加载功能("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/功能/钉钉自动打卡/每周定时任务.js"); });
 
 
 

@@ -40,7 +40,7 @@ ui.layout(
                                     </horizontal>
                                 </vertical>
                             </ScrollView>
-                            <img src="http://zuoxiaozi.top/0mk/工具箱/微信名片.jpg" w="auto" h="300" />
+                            <img src="http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/微信名片.jpg" w="auto" h="300" />
                             <vertical padding="5">
                                 <text id="标签2" text="不忘初心" />
                             </vertical>
@@ -62,7 +62,7 @@ ui.run(() => {//启动UI机器码
 });
 
 function 公告内容() {
-    let res = http.get("https://zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+    let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
     if (res.statusCode != 200) {
         alert("❌获取失败: " + res.statusCode);
         return;
@@ -103,7 +103,7 @@ ui.开始授权.on('click', () => {//验证操作
     let 取设备机器码 = $crypto.digest(device.getAndroidId(), "MD5")
     threads.start(function () {
         function 到期时间() {
-            let res = http.get("https://zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
@@ -129,7 +129,7 @@ ui.开始授权.on('click', () => {//验证操作
         let 结果i = 到期时间() - (网络时间());
         // alert(结果i, 到期时间(), 网络时间())
         if (结果i > 0) {
-            let res = http.get("https://zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
@@ -139,7 +139,7 @@ ui.开始授权.on('click', () => {//验证操作
             let thisTime时间 = thisTime.时间
             ui.run(() => { ui.标签3.setText("🕒到期时间:" + thisTime时间 + "\n🟢登录成功") });
 
-            let result = http.get("https://zuoxiaozi.top/0mk/工具箱/手机工具箱UI2.js", {
+            let result = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/手机工具箱UI2.js", {
                 headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' }
             });
             if (result.statusCode == 200) {
@@ -151,7 +151,7 @@ ui.开始授权.on('click', () => {//验证操作
             return;
             // idlujing.put("idlujing", $crypto.digest(device.getAndroidId(), "MD5")); //存ID
         } else if (0 > 结果i) {
-            let res = http.get("https://zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
@@ -168,7 +168,7 @@ ui.开始授权.on('click', () => {//验证操作
 
 ui.进入官网.on('click', () => {//进入官网
     threads.start(function () {
-        app.openUrl("zuoxiaozi.top")
+        app.openUrl("raw.gh.fakev.cn/cx1937410794/ku/main")
     });
 });
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

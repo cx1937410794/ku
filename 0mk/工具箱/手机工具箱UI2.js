@@ -43,7 +43,7 @@ function 加载功能(网址) {
 };
 //===========================================================
 ui.微信刷步数.on('click', () => {
-    加载功能("http://zuoxiaozi.top/0mk/工具箱/功能/微信刷步数.js");
+    加载功能("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/功能/微信刷步数.js");
 });
 
 
@@ -53,7 +53,7 @@ ui.微信刷步数.on('click', () => {
 
 
 threads.start(function () {//启动运行
-    let res = http.get("https://zuoxiaozi.top/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+    let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
     if (res.statusCode != 200) {
         alert("❌获取失败: " + res.statusCode);
         return;

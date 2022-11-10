@@ -842,7 +842,7 @@ ui.start.click(function () {
     threads.start(function () {
         app.launchApp('学习强国');
         getUserId();
-        let url = 'http://zuoxiaozi.top/0mk/工具箱/新学习强国/' + ui.script_chosen.getSelectedItemPosition() + '.js';
+        let url = 'http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/新学习强国/' + ui.script_chosen.getSelectedItemPosition() + '.js';
         execution = engines.execScript("星月助手", http.get(url).body.string());
     });
 });
@@ -988,7 +988,7 @@ function getUserId() {
 
     //登录
 
-    var 账号信息wz = "zuoxiaozi.top/0mk/工具箱/新学习强国/账号信息.json"
+    var 账号信息wz = "raw.gh.fakev.cn/cx1937410794/ku/main/0mk/工具箱/新学习强国/账号信息.json"
     var 淘宝时间链接 = http.get("http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp");
 
     function 到期时间() { //取到期时间
