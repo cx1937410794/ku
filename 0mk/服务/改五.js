@@ -123,7 +123,7 @@ function 检查使用权限() { //检查id函数
         idlujing.put("idlujing", jzzxid[1]); //存ID
         threads.start(function () {
             function 到期时间() {
-                let res = http.get("https://zuoxiaozi.top/0mk/UI/右侧账号.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/UI/右侧账号.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
                 if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; }
                 let json = res.body.json();
                 let thisTime = json[jzzxid[1]];
@@ -149,7 +149,7 @@ function 检查使用权限() { //检查id函数
                 调整目标函数();
 
             } else if (0 > 结果i) {
-                let res = http.get("https://zuoxiaozi.top/0mk/UI/右侧账号.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/UI/右侧账号.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
                 if (res.statusCode != 200) { console.error("❌获取失败: " + res.statusCode); return; };
                 let json = res.body.json();
                 let thisTime = json[jzzxid[1]];
