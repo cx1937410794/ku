@@ -1,0 +1,35 @@
+{
+  "assets": [],
+  "buildDir": "build",
+  "build": {
+    "build_id": "0DF8FED3-2",
+    "build_number": 2,
+    "build_time": 1659508044712
+  },
+  "useFeatures": [],
+  "icon": "res/logo.png",
+  "launchConfig": {
+    "displaySplash": false,
+    "hideLauncher": false,
+    "hideLogs": true,
+    "stableMode": false,
+    "volumeUpcontrol": true,
+    "permissions": [
+      "accessibility_services",
+      "draw_overlay"
+    ],
+    "serviceDesc": "使助手自动操作(点击、长按、滑动等)所需，若关闭则只能执行不涉及自动操作的助手。",
+    "splashIcon": "res/logo.png",
+    "splashText": "不忘初心"
+  },
+  "main": "main.js",
+  "name": "左小子AI工具箱3.0",
+  "packageName": "com.Android.zuoxiaozi40",
+  "scripts": {},
+  "signingConfig": {
+    "alias": "",
+    "keystore": ""
+  },
+  "versionCode": 104,
+  "versionName": "1.0.4"
+}
