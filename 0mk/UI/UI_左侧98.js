@@ -756,7 +756,7 @@ function 运行执行() {
         ui.ID输入框.text(idlujing.get("idlujing"));
         ui.登录按钮.click();
     };
-    ui.检查更新按钮.click();
+    // ui.检查更新按钮.click();
     学习强军查询到期时间();
 
     if (!$power_manager.isIgnoringBatteryOptimizations()) {
