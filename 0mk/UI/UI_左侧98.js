@@ -298,13 +298,13 @@ function 模拟器自动化() {
     var content = storage.get("content");
     if (content == "模拟器刷分1") {
         if (idlujing.get("idlujing") != "") {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
         };
     };
     if (content == "模拟器刷分2") {
         if (idlujing.get("idlujing") != "") {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/积分二.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分二.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
         };
     };
@@ -404,7 +404,7 @@ ui.联系QQ客服2.on('click', () => { try { app.startActivity({ action: "androi
 // ui.控制刷分按钮1.on("click", () => { //控制刷分按钮
 //     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
 //     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-//         let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+//         let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
 //         if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
 //     } else { alert("❌请先在主页登陆"); return false; };
 // });
@@ -412,21 +412,21 @@ ui.联系QQ客服2.on('click', () => { try { app.startActivity({ action: "androi
 ui.控制刷分按钮2.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/积分二.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分二.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
 ui.控制刷电子书按钮.on("click", () => { //控制刷电子书按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/电子书.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/电子书.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
 ui.控制刷课时按钮.on("click", () => { //控制刷课时按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/刷课时.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/刷课时.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res);
@@ -438,7 +438,7 @@ ui.控制刷课时按钮.on("click", () => { //控制刷课时按钮
 ui.控制搜题按钮.on("click", () => { //控制刷搜题
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
@@ -446,7 +446,7 @@ ui.自动音频按钮.on("click", () => { //pyjr按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/自动音频.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/自动音频.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子自动音频", res); } else { alert("❌请求错误，请联系管理员"); };
         });
     } else { alert("❌请先在主页登陆"); return false; };
@@ -456,7 +456,7 @@ ui.一键改五按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/服务/改五.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/改五.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); exit(); };
         });
     } else { alert("❌请先在主页登陆"); return false; };
@@ -465,7 +465,7 @@ ui.wx授权.on("click", () => { //超级登录
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/服务/超级登陆.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/超级登陆.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); exit(); };
         });
     } else { alert("❌请先在主页登陆"); return false; };
@@ -586,7 +586,7 @@ ui.还原数据.on("click", () => { //还原
 ui.使用教程按钮.on("click", () => {
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/服务/教程UI.js", {
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/教程UI.js", {
                 headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' }
             });
             if (result.statusCode == 200) {
@@ -630,7 +630,7 @@ ui.更新日志按钮.on("click", () => {
             toast("已取消");
         }).show();
         try {
-            var geturl = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/服务/更新日志.json");
+            var geturl = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/更新日志.json");
         } catch (e) {
             dialog1.dismiss();
             alert("网络错误，请联系管理员")
@@ -656,7 +656,7 @@ ui.检查更新按钮.on("click", () => {
 ui.意见反馈按钮.on("click", () => {
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/服务/问题反馈.js", {
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/问题反馈.js", {
                 headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' }
             });
             if (result.statusCode == 200) {
@@ -674,7 +674,7 @@ ui.设置按钮.on("click", () => {
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/服务/设置.js", {
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/设置.js", {
                 headers: {
                     'Accept-Language': 'zh-cn,zh;q=0.5',
                     'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11'
@@ -696,7 +696,7 @@ ui.长征路按钮.on("click", () => { //控制刷分按钮
         if (ui.长征路name.text() == "1937410794") {
             threads.start(function () {
 
-                let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/控制/长征路.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/长征路.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
                 if (result.statusCode == 200) {
                     var res = result.body.string();
                     脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -711,7 +711,7 @@ ui.长征路按钮.on("click", () => { //控制刷分按钮
 ui.学习强军按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限 
     threads.start(function () {
-        let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/学习强军/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学习强军/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -724,7 +724,7 @@ ui.学习强军按钮.on("click", () => { //控制刷分按钮
 ui.学习强军答题按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     threads.start(function () {
-        let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/学习强军/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学习强军/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -738,7 +738,7 @@ ui.学习强军ID查询按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false };
     threads.start(function () {
 
-        let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/学习强军/八一通ID查询.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学习强军/八一通ID查询.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -849,7 +849,7 @@ ui.scoreTask.on("click", () => {//下载定时任务
         if (ui.setHour2.getText() < 24 && ui.setHour2.getText() >= 0) {//小时范围
             if (ui.setSecond2.getText() <= 60 && ui.setSecond2.getText() >= 0) {//分钟范围 
                 threads.start(function () {
-                    let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/服务/定时任务引擎组件.js", {
+                    let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/定时任务引擎组件.js", {
                         headers: {
                             'Accept-Language': 'zh-cn,zh;q=0.5',
                             'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11'
@@ -895,7 +895,7 @@ ui.list.on("item_bind", function (itemView, itemHolder) {//删除任务同时删
 function 弹窗公告() {
     threads.start(function () {
         try {
-            var text = http.get('https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/UI/%E5%85%AC%E5%91%8A.js').body.string();
+            var text = http.get('https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/UI/%E5%85%AC%E5%91%8A.js').body.string();
             if (text.length == 0) {
                 弹窗公告 = true;
                 return;
@@ -990,7 +990,7 @@ function 关闭每日广告() {
 function 学习强军查询到期时间() {
     threads.start(function () {
         if (idlujing.get("xxqg_pz_id")) {
-            let res = http.get("ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main//0mk/学习强军/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学习强军/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             let thisTime = json[idlujing.get("xxqg_pz_id")];
