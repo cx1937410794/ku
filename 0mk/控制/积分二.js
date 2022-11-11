@@ -152,11 +152,14 @@ function 签到函数() {
 function 程序_学习室函数() {
     className("android.widget.TextView").text("今日学习").waitFor();
     className("android.widget.TextView").text("今日学习").findOne().parent().click();
-
+log("调试模式:点击今日学习_完成")
     text("已订专栏").waitFor();
+    log("调试模式:等待专栏出现_完成")
     if (text("已订专栏").findOne(5000) != null) {
         click(text("已订专栏").findOne().bounds().centerX(), text("已订专栏").findOne().bounds().centerY());
+        log("调试模式:点击专栏_完成")
     };
+    log("调试模式:退出_完成")
     sleep(1000);
     //查看学习目标数
     var 组件_学习目标全内容 = id("tvSourceDay").className("android.widget.TextView").findOne(50000);
