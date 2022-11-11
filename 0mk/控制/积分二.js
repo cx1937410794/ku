@@ -153,9 +153,9 @@ function 程序_学习室函数() {
     className("android.widget.TextView").text("今日学习").waitFor();
     className("android.widget.TextView").text("今日学习").findOne().parent().click();
 
-    id("tvTabTitle").className("android.widget.TextView").text("已订专栏").waitFor();
-    if (id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne(5000) != null) {// toastLog("我找到了");
-        click(id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerX(), id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerY());
+    text("已订专栏").waitFor();
+    if (text("已订专栏").findOne(5000) != null) {
+        click(text("已订专栏").findOne().bounds().centerX(), text("已订专栏").findOne().bounds().centerY());
     };
     sleep(1000);
     //查看学习目标数
