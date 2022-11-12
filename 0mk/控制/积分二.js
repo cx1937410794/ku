@@ -188,7 +188,7 @@ function 函数_文章阅读(num) {
     for (a = 1; a <= num; a++) {
         sleep(2000);
         //toast("恭喜我找到了");
-        // id("tvTabTitle").className("android.widget.TextView").text("已订专题").findOne().findOne().parent().parent()
+        // text("已订专题").findOne().findOne().parent().parent()
         //找到第一篇文章，并且找到他的子控件获取他的text
         if (id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne(3000) != null) {//列表文章名字是否存在
             var 组件_文章名字 = id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne().text(); //toastLog(title);
@@ -216,7 +216,7 @@ function 函数_文章阅读(num) {
         } else {//列表文章名字不存在
             // if (id("tv_empty_subscribe").className("android.widget.TextView").findOne(1000) != null) {
             if (id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().parent().parent().selected()) {//selected被选中
-                click(id("tvTabTitle").className("android.widget.TextView").text("已订专题").findOne().bounds().centerX(), id("tvTabTitle").className("android.widget.TextView").text("已订专题").findOne().bounds().centerY());
+                click(text("已订专题").findOne().bounds().centerX(), text("已订专题").findOne().bounds().centerY());
             } else {
                 // alert("网络错误或无内容可阅读，已终止执行软件[42]");
                 click(id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerX(), id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerY());
