@@ -169,9 +169,9 @@ ui.layout(
                             </horizontal>
                             <text gravity="center" textColor="red" textSize="15sp" text="本功能单独授权：20元3个月" />
                             <text id="xxqj_标签_1" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
-                            <button id="xue+xiIQIANG_JUNID按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <button id="xue+xiIQIANG_JUNID答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <button id="xue+xiIQIANG_JUNID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="❓查询学习强军ID" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xuexiIQIANG_JUNID按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xuexiIQIANG_JUNID答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xuexiIQIANG_JUNID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="❓查询学习强军ID" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <text id="标签2" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                             <text id="标签3" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                         </vertical>
