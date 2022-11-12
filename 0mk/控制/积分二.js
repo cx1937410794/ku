@@ -234,10 +234,10 @@ function 继续学习音频课() {
     console.hide(); //关闭日志窗口
     sleep(2000);
     //随机选择左侧列表
-    let 随机左侧名字 = random(0, 9)
-    click(className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerX(), className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerY());
-    sleep(500);
-    click(className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerX(), className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerY());
+    // let 随机左侧名字 = random(0, 9)
+    // click(className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerX(), className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerY());
+    // sleep(500);
+    // click(className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerX(), className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerY());
     日志控制台();
     sleep(5000);
     //随机选择音频课排行
