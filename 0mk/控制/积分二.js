@@ -360,7 +360,7 @@ function 监听函数() {
     threads.start(function () {
         events.observeToast();
         events.onToast(function (toast) {
-            if (toast.getText() == "军职在线：分享成功分享已达上限" || toast.getText() == "分享成功分享已达上限") {
+            if (toast.getText() == unescape('\u519b\u804c\u5728\u7ebf\uff1a\u5206\u4eab\u6210\u529f\u5206\u4eab\u5df2\u8fbe\u4e0a\u9650') || toast.getText() == "分享成功分享已达上限") {
                 log("分享成功,分享已达上限");
                 组件_停止分享开关 = true; //分享已达上限,停止分享
             } else if (toast.getText() == "分享成功") {
@@ -455,7 +455,7 @@ function 返回首页() {
 
         if (返回次数 > 4) {
             APP重启循环 = APP重启循环 + 1
-            if (!(launchApp("军职在线") || launch('com.moocxuetang'))) {
+            if (!(launchApp(unescape('\u519b\u804c\u5728\u7ebf')) || launch('com.moocxuetang'))) {
                 console.error("重启失败，请检查APP是否安装");
                 exit();
             } else {//重启app成功
