@@ -67,7 +67,7 @@ ui.layout(
                                         <button margin='5dp' id='联系QQ客服1' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服1'></button>
                                         <button margin='5dp' id='联系QQ客服2' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服2'></button>
                                     </horizontal>
-                                    <button margin='5dp' id="我的ID" text="❓查询军职在线ID" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
+                                    <button margin='5dp' id="我的ID" text="{{unescape('%E6%9F%A5%E8%AF%A2%E5%86%9B%E8%81%8C%E5%9C%A8%E7%BA%BFID')}}" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
                                     <text gravity="center" textColor="red" textSize="18sp" text="" />
                                 </vertical>
                             </ScrollView>
