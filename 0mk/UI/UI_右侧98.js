@@ -165,13 +165,13 @@ ui.layout(
                         <vertical>
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
-                                <text text='学习强军' textSize='16sp' textColor='#993e00'></text>
+                                <text text="{{unescape('\u5b66\u4e60\u5f3a\u519b')}}" textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
                             <text gravity="center" textColor="red" textSize="15sp" text="本功能单独授权：20元3个月" />
                             <text id="xxqj_标签_1" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
-                            <button id="学习强军按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <button id="学习强军答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <button id="学习强军ID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="❓查询学习强军ID" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xue+xiIQIANG_JUN按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xue+xiIQIANG_JUN答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xue+xiIQIANG_JUNID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="❓查询学习强军ID" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <text id="标签2" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                             <text id="标签3" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                         </vertical>
@@ -553,7 +553,7 @@ ui.长征路按钮.on("click", () => { //控制刷分按钮
         } else { alert("测试专用，请勿点击"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
-ui.学习强军按钮.on("click", () => { //控制刷分按钮
+ui.xue+xiIQIANG_JUN按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限 
     threads.start(function () {
         let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
@@ -566,7 +566,7 @@ ui.学习强军按钮.on("click", () => { //控制刷分按钮
         };
     });
 });
-ui.学习强军答题按钮.on("click", () => { //控制刷分按钮
+ui.xue+xiIQIANG_JUN答题按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限 
     threads.start(function () {
         let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
@@ -579,7 +579,7 @@ ui.学习强军答题按钮.on("click", () => { //控制刷分按钮
         };
     });
 });
-ui.学习强军ID查询按钮.on("click", () => { //控制刷分按钮
+ui.xue+xiIQIANG_JUNID查询按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false };
     threads.start(function () {
 

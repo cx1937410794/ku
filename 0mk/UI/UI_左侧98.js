@@ -70,7 +70,7 @@ ui.layout(
                                         <button margin='5dp' id='联系QQ客服1' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服1'></button>
                                         <button margin='5dp' id='联系QQ客服2' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服2'></button>
                                     </horizontal>
-                                    <button margin='5dp' id="我的ID" text = "{{unescape('\u67e5\u8be2\u519b\u804c\u5728\u7ebfID')}}" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
+                                    <button margin='5dp' id="我的ID" text="{{unescape('\u67e5\u8be2\u519b\u804c\u5728\u7ebfID')}}" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
                                     <text gravity="center" textColor="red" textSize="18sp" text="" />
                                 </vertical>
                             </ScrollView>
@@ -165,13 +165,13 @@ ui.layout(
                         <vertical>
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
-                                <text text='学习强军' textSize='16sp' textColor='#993e00'></text>
+                                <text text="{{unescape('\u5b66\u4e60\u5f3a\u519b')}}" textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
                             <text gravity="center" textColor="red" textSize="15sp" text="本功能单独授权：20元3个月" />
                             <text id="xxqj_标签_1" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
-                            <button id="学习强军按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <button id="学习强军答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <button id="学习强军ID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="❓查询学习强军ID" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xue+xiIQIANG_JUNID按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xue+xiIQIANG_JUNID答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xue+xiIQIANG_JUNID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="❓查询学习强军ID" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <text id="标签2" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                             <text id="标签3" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                         </vertical>
@@ -708,10 +708,10 @@ ui.长征路按钮.on("click", () => { //控制刷分按钮
         } else { alert("测试专用，请勿点击"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
-ui.学习强军按钮.on("click", () => { //控制刷分按钮
+ui.xue + xiIQIANG_JUNID按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限 
     threads.start(function () {
-        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -721,10 +721,10 @@ ui.学习强军按钮.on("click", () => { //控制刷分按钮
         };
     });
 });
-ui.学习强军答题按钮.on("click", () => { //控制刷分按钮
+ui.xue + xiIQIANG_JUNID答题按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     threads.start(function () {
-        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -734,11 +734,11 @@ ui.学习强军答题按钮.on("click", () => { //控制刷分按钮
         };
     });
 });
-ui.学习强军ID查询按钮.on("click", () => { //控制刷分按钮
+ui.xue + xiIQIANG_JUNID查询按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false };
     threads.start(function () {
 
-        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通ID查询.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通ID查询.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -990,7 +990,7 @@ function 关闭每日广告() {
 function 学习强军查询到期时间() {
     threads.start(function () {
         if (idlujing.get("xxqg_pz_id")) {
-            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             let thisTime = json[idlujing.get("xxqg_pz_id")];
