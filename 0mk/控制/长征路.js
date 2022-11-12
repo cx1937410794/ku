@@ -4415,25 +4415,25 @@ function 学习长征函数题() {
 
 
 
-threads.start(function () {//启动另一个线程
-    while (true) {
-        sleep(10000);
-        toast("弹窗检测....")
-        if (id("tvRight").exists()) {
-            text("不，继续学习").click()
-            toastLog("选择继续学习")
-        }
-        if (id("exo_player_error_btn_id").text("播放异常,视频地址异常，或者网络不可用").exists()) {
-            id("exo_player_error_btn_id").text("播放异常,视频地址异常，或者网络不可用").findOne().click()
-            toastLog("选择重新播放")
-        }
-        if (className("android.widget.TextView").text("您当前网络不是wifi，是否继续观看").exists()) {
-            id("button1").findOne().click()
-            toastLog("选择继续观看")
-        }
-        if (text("继续")) {//默认使用数据网络
-            click("继续");
-            click("确定");
-        }
-    }
-});
+// threads.start(function () {//启动另一个线程
+//     while (true) {
+//         sleep(10000);
+//         toast("弹窗检测....")
+//         if (id("tvRight").exists()) {
+//             text("不，继续学习").click()
+//             toastLog("选择继续学习")
+//         }
+//         if (id("exo_player_error_btn_id").text("播放异常,视频地址异常，或者网络不可用").exists()) {
+//             id("exo_player_error_btn_id").text("播放异常,视频地址异常，或者网络不可用").findOne().click()
+//             toastLog("选择重新播放")
+//         }
+//         if (className("android.widget.TextView").text("您当前网络不是wifi，是否继续观看").exists()) {
+//             id("button1").findOne().click()
+//             toastLog("选择继续观看")
+//         }
+//         if (text("继续")) {//默认使用数据网络
+//             click("继续");
+//             click("确定");
+//         }
+//     }
+// });
