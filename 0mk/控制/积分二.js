@@ -557,7 +557,7 @@ function 返回音频列表页() {
         back();
         if (text("学习室").exists()) {
             console.info("返回首页了")
-            flag = true;
+            flalg = true;
             while (!click("发现"));
             sleep(random(500, 1000));
             进入音频课()
