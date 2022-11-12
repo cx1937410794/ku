@@ -721,6 +721,7 @@ ui.xuexiIQIANGJUN.on("click", () => { //控制刷分按钮
         };
     });
 });
+
 ui.xuexiIQIANGJUNID答题按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     threads.start(function () {
