@@ -7,7 +7,7 @@ raw.gh.fakev.cn / cx1937410794 / ku / main
 
 
 //信息替换
-title = "{{unescape('%u5F3A%u56FD%u52A9%u624B')}}"
+title = "{{unescape('\u2753\u67e5\u8be2\u5b66\u4e60\u5f3a\u519b\u0049\u0044')}}"
 // https://tool.chinaz.com/tools/urlencode.aspx
 
 

@@ -171,7 +171,7 @@ ui.layout(
                             <text id="xxqj_标签_1" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                             <button id="xuexiIQIANGJUN按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="xuexiIQIANGJUN答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <button id="xuexiIQIANGJUNID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="❓查询学习强军ID" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="xuexiIQIANGJUNID查询按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="{{unescape('\u2753\u67e5\u8be2\u5b66\u4e60\u5f3a\u519b\u0049\u0044')}}" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <text id="标签2" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                             <text id="标签3" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                         </vertical>
@@ -602,7 +602,7 @@ function 运行执行() {
         ui.登录按钮.click();
     };
     // ui.检查更新按钮.click();
-    学习强军查询到期时间();
+    xuexiIQIANGJUNID到期时间查询();
 
     if (!$power_manager.isIgnoringBatteryOptimizations()) {
         toastLog("❌未开启忽略电池优化，请求中...");
@@ -833,7 +833,7 @@ function 关闭每日广告() {
 
 
 // xxqj
-function 学习强军查询到期时间() {
+function xuexiIQIANGJUNID到期时间查询() {
     threads.start(function () {
         if (idlujing.get("xxqg_pz_id")) {
             let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
