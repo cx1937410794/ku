@@ -721,7 +721,7 @@ ui.xuexiIQIANGJUN.on("click", () => { //控制刷分按钮
         };
     });
 });
-ui.xue + xiIQIANG_JUNID答题按钮.on("click", () => { //控制刷分按钮
+ui.xuexiIQIANGJUNID答题按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     threads.start(function () {
         let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
@@ -734,7 +734,7 @@ ui.xue + xiIQIANG_JUNID答题按钮.on("click", () => { //控制刷分按钮
         };
     });
 });
-ui.xue + xiIQIANG_JUNID查询按钮.on("click", () => { //控制刷分按钮
+ui.xuexiIQIANGJUNID查询按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false };
     threads.start(function () {
 
