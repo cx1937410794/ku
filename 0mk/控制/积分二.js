@@ -152,7 +152,7 @@ function 签到函数() {
 function 程序_学习室函数() {
     className("android.widget.TextView").text("今日学习").waitFor();
     className("android.widget.TextView").text("今日学习").findOne().parent().click();
-log("调试模式:点击今日学习_完成")
+    log("调试模式:点击今日学习_完成")
     text("已订专栏").waitFor();
     log("调试模式:等待专栏出现_完成")
     if (text("已订专栏").findOne(5000) != null) {

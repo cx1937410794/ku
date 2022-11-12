@@ -372,7 +372,7 @@ function 返回首页() {
 
         if (返回次数 > 4) {
             APP重启循环 = APP重启循环 + 1
-            if (!(launchApp("军职在线") || launch('com.moocxuetang'))) {
+            if (!(launchApp(unescape('\u519b\u804c\u5728\u7ebf')) || launch('com.moocxuetang'))) {
                 alert("重启失败，请检查APP是否安装");
                 exit();
             } else {//重启app成功
