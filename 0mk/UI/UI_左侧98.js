@@ -708,7 +708,7 @@ ui.长征路按钮.on("click", () => { //控制刷分按钮
         } else { alert("测试专用，请勿点击"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
-ui.xue + xiIQIANG_JUNID按钮.on("click", () => { //控制刷分按钮
+ui.xuexiIQIANG_JUNID按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限 
     threads.start(function () {
         let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
