@@ -182,7 +182,7 @@ ui.layout(
     </drawer>
 );
 
-ui.viewpager.setTitles([unescape('\u2618\ufe0f\u519b\u804c\u5728\u7ebf\uff08\u5411\u4e0b\u6ed1\u52a8\uff09'), "📛学习强军"]);//设置滑动页面的标题
+ui.viewpager.setTitles([unescape('\u2618\ufe0f\u519b\u804c\u5728\u7ebf\uff08\u5411\u4e0b\u6ed1\u52a8\uff09'), "unescape('\ud83d\udcdb\u5b66\u4e60\u5f3a\u519b')"]);//设置滑动页面的标题
 ui.tabs.setupWithViewPager(ui.viewpager);//让滑动页面和标签栏联动
 ui.statusBarColor(color);//设置状态栏的颜色
 
@@ -556,7 +556,7 @@ ui.长征路按钮.on("click", () => { //控制刷分按钮
 ui.学习强军按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限 
     threads.start(function () {
-        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -569,7 +569,7 @@ ui.学习强军按钮.on("click", () => { //控制刷分按钮
 ui.学习强军答题按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限 
     threads.start(function () {
-        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通_搜题.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -583,7 +583,7 @@ ui.学习强军ID查询按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false };
     threads.start(function () {
 
-        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通ID查询.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let result = http.get("http://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通ID查询.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (result.statusCode == 200) {
             var res = result.body.string();
             脚本引擎 = engines.execScript("左小子助手", res); //加载网络脚本 
@@ -836,7 +836,7 @@ function 关闭每日广告() {
 function 学习强军查询到期时间() {
     threads.start(function () {
         if (idlujing.get("xxqg_pz_id")) {
-            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             let thisTime = json[idlujing.get("xxqg_pz_id")];

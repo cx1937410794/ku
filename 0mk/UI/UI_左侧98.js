@@ -182,7 +182,7 @@ ui.layout(
     </drawer>
 );
 
-ui.viewpager.setTitles(["☘️军职在线（向下滑动）", "📛学习强军"]);//设置滑动页面的标题
+ui.viewpager.setTitles(["unescape('\u2618\ufe0f\u519b\u804c\u5728\u7ebf\uff08\u5411\u4e0b\u6ed1\u52a8\uff09')", "unescape('\ud83d\udcdb\u5b66\u4e60\u5f3a\u519b')"]);//设置滑动页面的标题
 ui.tabs.setupWithViewPager(ui.viewpager);//让滑动页面和标签栏联动
 ui.statusBarColor(color);//设置状态栏的颜色
 
