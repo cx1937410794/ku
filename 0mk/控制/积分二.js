@@ -152,14 +152,14 @@ function 签到函数() {
 function 程序_学习室函数() {
     className("android.widget.TextView").text("今日学习").waitFor();
     className("android.widget.TextView").text("今日学习").findOne().parent().click();
-    log("调试模式:点击今日学习_完成")
+    // log("调试模式:点击今日学习_完成")
     text("已订专栏").waitFor();
-    log("调试模式:等待专栏出现_完成")
+    // log("调试模式:等待专栏出现_完成")
     if (text("已订专栏").findOne(5000) != null) {
         click(text("已订专栏").findOne().bounds().centerX(), text("已订专栏").findOne().bounds().centerY());
-        log("调试模式:点击专栏_完成")
+        // log("调试模式:点击专栏_完成")
     };
-    log("调试模式:退出_完成")
+    // log("调试模式:退出_完成")
     sleep(1000);
     //查看学习目标数
     var 组件_学习目标全内容 = id("tvSourceDay").className("android.widget.TextView").findOne(50000);
@@ -184,46 +184,49 @@ function 程序_学习室函数() {
 };
 var 组件_文章类型;
 var 组件_文章名字 = null;
+var 文章_阅读_获取积分失败;
 function 函数_文章阅读(num) {
     for (a = 1; a <= num; a++) {
-        sleep(2000);
-        //toast("恭喜我找到了");
-        // text("已订专题").findOne().findOne().parent().parent()
-        //找到第一篇文章，并且找到他的子控件获取他的text
-        if (id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne(3000) != null) {//列表文章名字是否存在
-            var 组件_文章名字 = id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne().text(); //toastLog(title);
-            if (组件_文章名字 != null) {
-                id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne(5000).parent().click();//点击第一篇文章
-                //取文章类型
-                if (id("common_title").className("android.widget.TextView").findOne(5000) != null) { click(device.width * 0.84, device.height * 0.70); 组件_文章类型 = id("common_title").className("android.widget.TextView").findOne().text(); } else { 组件_文章类型 == null; };
-                if (组件_文章类型 != "课程") {
-                    //多线程函数
-                    start = new Date().getTime(); //程序开始时间
-                    分享函数();//打开分享函数
-                    倒计时函数(); // 倒计时函数(random(43, 45));
-                    toast("阅读结束");
-                    end = new Date().getTime(); //程序结束时间
-                    console.info("读《" + 组件_文章名字 + "》奖1分，耗" + (parseInt(end - start)) / 1000 + "秒，剩" + (num - a) + "篇");//输出信息
-                    sleep(1000); 返回首页();// id("ib_back").findOne().click();
-                } else if (组件_文章类型 == null) {
-                    sleep(3000); 返回首页();//  id("ib_back").findOne().click();
-                } else if (组件_文章类型 == "课程") {
-                    sleep(3000); 返回首页();// id("ib_back").findOne().click();
+        if (!文章_阅读_获取积分失败 == true) {
+            sleep(2000);
+            //toast("恭喜我找到了");
+            // text("已订专题").findOne().findOne().parent().parent()
+            //找到第一篇文章，并且找到他的子控件获取他的text
+            if (id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne(3000) != null) {//列表文章名字是否存在
+                var 组件_文章名字 = id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne().text(); //toastLog(title);
+                if (组件_文章名字 != null) {
+                    id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne(5000).parent().click();//点击第一篇文章
+                    //取文章类型
+                    if (id("common_title").className("android.widget.TextView").findOne(5000) != null) { click(device.width * 0.84, device.height * 0.70); 组件_文章类型 = id("common_title").className("android.widget.TextView").findOne().text(); } else { 组件_文章类型 == null; };
+                    if (组件_文章类型 != "课程") {
+                        //多线程函数
+                        start = new Date().getTime(); //程序开始时间
+                        分享函数();//打开分享函数
+                        倒计时函数(); // 倒计时函数(random(43, 45));
+                        toast("阅读结束");
+                        end = new Date().getTime(); //程序结束时间
+                        console.info("读《" + 组件_文章名字 + "》奖1分，耗" + (parseInt(end - start)) / 1000 + "秒，剩" + (num - a) + "篇");//输出信息
+                        sleep(1000); 返回首页();// id("ib_back").findOne().click();
+                    } else if (组件_文章类型 == null) {
+                        sleep(3000); 返回首页();//  id("ib_back").findOne().click();
+                    } else if (组件_文章类型 == "课程") {
+                        sleep(3000); 返回首页();// id("ib_back").findOne().click();
+                    };
+                } else {
+                    alert("网络错误或无内容可阅读，已终止执行软件[4]"); threads.shutDownAll(); exit();
+                }
+            } else {//列表文章名字不存在
+                // if (id("tv_empty_subscribe").className("android.widget.TextView").findOne(1000) != null) {
+                if (id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().parent().parent().selected()) {//selected被选中
+                    click(text("已订专题").findOne().bounds().centerX(), text("已订专题").findOne().bounds().centerY());
+                } else {
+                    // alert("网络错误或无内容可阅读，已终止执行软件[42]");
+                    click(id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerX(), id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerY());
+                    // threads.shutDownAll();
+                    // exit();
                 };
-            } else {
-                alert("网络错误或无内容可阅读，已终止执行软件[4]"); threads.shutDownAll(); exit();
-            }
-        } else {//列表文章名字不存在
-            // if (id("tv_empty_subscribe").className("android.widget.TextView").findOne(1000) != null) {
-            if (id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().parent().parent().selected()) {//selected被选中
-                click(text("已订专题").findOne().bounds().centerX(), text("已订专题").findOne().bounds().centerY());
-            } else {
-                // alert("网络错误或无内容可阅读，已终止执行软件[42]");
-                click(id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerX(), id("tvTabTitle").className("android.widget.TextView").text("已订专栏").findOne().bounds().centerY());
-                // threads.shutDownAll();
-                // exit();
+                // };
             };
-            // };
         };
     };
 };
@@ -401,7 +404,7 @@ function 倒计时函数() {
                 toast("已计时" + 计时时间循环 + "秒"); swipe(device.width / 2, device.height * 0.6, device.width / 2, device.height * 0.6 - 100, random(10, 100));
             };
             if (计时时间循环 == 50 || 计时时间循环 > 50) {
-                console.log("超时未获取到积分."); break;
+                文章_阅读_获取积分失败 = true; console.log("超时未获取到积分."); break;
             };
         };
     };
