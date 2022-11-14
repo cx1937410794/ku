@@ -69,7 +69,7 @@ ui.layout(
                                         <button margin='5dp' id='联系QQ客服1' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服1'></button>
                                         <button margin='5dp' id='联系QQ客服2' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服2'></button>
                                     </horizontal>
-                                    <button margin='5dp' id="我的ID" text = "{{unescape('\u67e5\u8be2\u519b\u804c\u5728\u7ebfID')}}" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
+                                    <button margin='5dp' id="我的ID" text="{{unescape('\u67e5\u8be2\u519b\u804c\u5728\u7ebfID')}}" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
                                     <text gravity="center" textColor="red" textSize="18sp" text="" />
                                 </vertical>
                             </ScrollView>
