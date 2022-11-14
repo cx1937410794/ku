@@ -753,7 +753,7 @@ function 使用权限验证() {
     调试模式完整二维码信息 = 二维码分析结果;
     threads.start(function () {
         function 到期时间() {
-            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             let thisTime = json[二维码分析结果[0]];
@@ -802,7 +802,7 @@ function 使用权限验证() {
         let 结果i = 到期时间() - (网络时间());
         // alert(结果i, 到期时间(), 网络时间())
         if (结果i > 0) {
-            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
@@ -821,7 +821,7 @@ function 使用权限验证() {
             全局_助手权限 = true;
             return;
         } else if (0 > 结果i) {
-            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学习强军/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+J/八一通权限信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) {
                 alert("❌获取失败: " + res.statusCode);
                 return;
