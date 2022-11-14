@@ -27,7 +27,7 @@ if (电子书翻页最慢时间 == undefined) { idlujing.put("电子书翻页最
 var 八一通评论开关 = idlujing.get("八一通评论开关");//读
 if (八一通评论开关 == undefined) { idlujing.put("八一通评论开关", true); };
 
-console.setGlobalLogConfig({ "file": "/sdcard/zzzzzz.log", });
+console.setGlobalLogConfig({ "file": "/sdcard/log.txt", });
 
 
 ui.statusBarColor("#000000");
