@@ -33,8 +33,8 @@ console.clear();
 http.__okhttp__.setTimeout(10000);
 function 云笔记A函数() {
     let url = [
-        'https://zuoxiaozi.top/0mk/UI/UI_左侧98.js',
-        'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/UI_左侧98.js',
+        // 'https://zuoxiaozi.top/0mk/UI/UI_左侧98.js',
+        // 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/UI_左侧98.js',
         "https://raw.gh.fakev.cn/cx1937410794/ku/main/UI_左侧98.js",
         'https://cdn.jsdelivr.net/gh/cx1937410794/ku/main/UI_左侧98.js',
         'https://raw.githubusercontent.com/cx1937410794/ku/main/UI_左侧98.js',
@@ -54,8 +54,8 @@ function 云笔记A函数() {
 };
 function 云笔记B函数() {
     let url = [
-        'https://zuoxiaozi.top/0mk/UI/UI_右侧98.js',
-        'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/UI_右侧98.js',
+        // 'https://zuoxiaozi.top/0mk/UI/UI_右侧98.js',
+        // 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/UI_右侧98.js',
         "https://raw.gh.fakev.cn/cx1937410794/ku/main/UI_右侧98.js",
         'https://cdn.jsdelivr.net/gh/cx1937410794/ku/main/UI_右侧98.js',
         'https://raw.githubusercontent.com/cx1937410794/ku/main/UI_右侧98.js',
