@@ -30,6 +30,7 @@ if (八一通评论开关 == undefined) { idlujing.put("八一通评论开关", 
 console.setGlobalLogConfig({ "file": "/sdcard/log.txt", });
 
 
+
 ui.statusBarColor("#000000");
 var color = '#000000';//设置脚本主题颜色
 ui.layout(
