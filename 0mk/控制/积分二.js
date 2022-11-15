@@ -302,32 +302,30 @@ function 继续学习音频课() {
         swipe(device.width / 2, 音频_音频列表_顶边 + 400, device.width / 2, 音频_音频列表_顶边, 500);//向上滑动
         sleep(1000);
         // if (!className("android.widget.FrameLayout").clickable(true).boundsInside(0, 音频_音频列表_顶点击范围, device.width, 音频_音频列表_底边).findOne(1000).click()) {
-        if (className("android.widget.FrameLayout").clickable(true) == true) {
-            if (!className("android.widget.FrameLayout").clickable(true).findOne(1000).click()) {
-                log("未成功");
-                返回音频列表页();
-            } else {
-                音频倒计时函数();
-                音频阅读数量 = (音频阅读数量 + 1);
-                log("阅读完成");
-                返回音频列表页();
-            };
-
-
-
-
-            if (音频阅读数量 == 26) {
-                console.hide();
-                返回首页();
-                while (!click("今日学习"));
-                exit();
-            };
-            sleep(3000);
-            // scrollDown(0); sleep(5); id("rvAudioList").scrollForward(); //看完当前页下滑一页
-            // if (className("android.widget.TextView").text("没有更多了").exists()) { 返回首页(); break; };//无内容了
-            // log("继续阅读下一页");
-            // sleep(3000);
+        if (!className("android.widget.FrameLayout").clickable(true).findOne(1000).click()) {
+            log("未成功");
+            返回音频列表页();
+        } else {
+            音频倒计时函数();
+            音频阅读数量 = (音频阅读数量 + 1);
+            log("阅读完成");
+            返回音频列表页();
         };
+
+
+
+
+        if (音频阅读数量 == 26) {
+            console.hide();
+            返回首页();
+            while (!click("今日学习"));
+            exit();
+        };
+        sleep(3000);
+        // scrollDown(0); sleep(5); id("rvAudioList").scrollForward(); //看完当前页下滑一页
+        // if (className("android.widget.TextView").text("没有更多了").exists()) { 返回首页(); break; };//无内容了
+        // log("继续阅读下一页");
+        // sleep(3000);
     };
 
 
