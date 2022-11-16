@@ -234,14 +234,14 @@ function 函数_文章阅读(num) {
 function 继续学习音频课() {
     while (!click("发现"));// className("android.widget.TextView").id("tvTabTitle").text("音频课").findOne(5000).parent().parent().parent().click();
     click(className("android.widget.TextView").id("tvTabTitle").text("音频课").findOne().bounds().centerX(), className("android.widget.TextView").id("tvTabTitle").text("音频课").findOne().bounds().centerY());
-    console.hide(); //关闭日志窗口
+    // console.hide(); //关闭日志窗口
     sleep(2000);
     //随机选择左侧列表
     // let 随机左侧名字 = random(0, 9)
     // click(className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerX(), className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerY());
     // sleep(500);
     // click(className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerX(), className("android.widget.TextView").text("热门新品").boundsInside(0, 0, device.width / 4, device.height).findOne(5000).parent().child(随机左侧名字).bounds().centerY());
-    日志控制台();
+    // 日志控制台();
     sleep(5000);
     //随机选择音频课排行
     let 随机次数 = random(0, 5); log("随便下滑：" + 随机次数 + "次");
@@ -433,10 +433,46 @@ function 音频倒计时函数() {
 
 function 日志控制台() {//设置控制台位置
     threads.start(function () {
-        console.show();
-        sleep(100);
-        console.setSize(device.width * 0.9, device.height * 0.30);
-        console.setPosition(-27, device.height * 0.68);
+        // console.show();
+        // sleep(100);
+        // console.setSize(device.width * 0.9, device.height * 0.30);
+        // console.setPosition(-27, device.height * 0.68);
+        let console_floaty = floaty.rawWindow(
+            <card cardCornerRadius="10" cardBackgroundColor="#00000000" cardElevation="0">
+                <horizontal id="root" gravity="center" padding="10dp" marginBottom="20dp">
+                    <console id="console" w="*" h="*" />
+                </horizontal>
+            </card>
+        );
+        let console_floaty_options = {
+            gravity: "bottom", //位置，可选值:top、bottom 默认值:bottom
+            size: "middle", //大小，可选值:small、middle、big 默认值:middle
+            alpha: 0.1, //透明度，可选值:0.0-1.0 默认值:0.6
+            frontColor: "#00ff00", //文字颜色，可选值:颜色代码 默认值:"#ffffff"
+            frontSize: 15, //文字大小，单位sp，可选值:0+ 默认值:16
+        };
+        ui.run(() => {
+            let scale = 0.25;
+            switch (console_floaty_options.size) {
+                case "small":
+                    scale = 0.1;
+                    break;
+                case "big":
+                    scale = 0.5;
+                default:
+                    break;
+            }
+            let bg = colors.parseColor("#66000000");
+            if (console_floaty_options.alpha < 1 && console_floaty_options.alpha > 0) bg = colors.parseColor("#" + parseInt(console_floaty_options.alpha * 255).toString(16) + "000000");
+            console_floaty.setSize(device.width, device.height * scale);
+            console_floaty.setPosition(0, console_floaty_options.gravity == "top" ? 0 : device.height * (1 - scale));
+            console_floaty.root.setBackgroundColor(bg);
+            console_floaty.setTouchable(false);
+            console_floaty.console.setConsole(runtime.console);
+            console_floaty.console.setColor("D", console_floaty_options.frontColor || "#ffffff");
+            console_floaty.console.setTextSize(console_floaty_options.frontSize || 16);
+            console_floaty.console.setInputEnabled(false);
+        });
     });
 };
 
