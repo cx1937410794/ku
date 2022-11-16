@@ -1,5 +1,5 @@
 关闭同名();
-积分控制窗口();
+日志控制台();
 var idlujing = storages.create("shuju");//配置文件
 
 device.keepScreenOn(3600 * 1000);//一直保持屏幕常亮
