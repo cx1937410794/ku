@@ -292,11 +292,11 @@ function 继续学习音频课() {
     sleep(random(500, 1000));
 
 
-//BUG1
+    //BUG1
     //翻页手势
     let 音频阅读数量 = 0;
-    let 音频_音频列表_顶点击范围 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne().bounds().top;//顶
-    let 音频_音频列表_底边 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne().bounds().bottom; //底
+    // let 音频_音频列表_顶点击范围 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne().bounds().top;//顶
+    // let 音频_音频列表_底边 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne().bounds().bottom; //底
     for (var i = 0; i < 26; i++) {
         let 音频_音频列表_顶边 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne(5000).bounds().top;//顶// let 音频_音频列表_底边 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne(5000).bounds().botto; //底
         swipe(device.width / 2, 音频_音频列表_顶边 + 400, device.width / 2, 音频_音频列表_顶边, 500);//向上滑动
