@@ -292,7 +292,7 @@ function 继续学习音频课() {
     sleep(random(500, 1000));
 
 
-
+//BUG1
     //翻页手势
     let 音频阅读数量 = 0;
     let 音频_音频列表_顶点击范围 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne().bounds().top;//顶
@@ -563,10 +563,6 @@ function 返回音频列表页() {
             flalg = true;
             while (!click("发现"));
             sleep(random(500, 1000));
-            进入音频课()
-            sleep(random(3000, 4000));
-            选择音频类目()
-            进入音频课()
             break;
         };
     };
