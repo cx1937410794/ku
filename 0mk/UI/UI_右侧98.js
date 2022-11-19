@@ -244,7 +244,7 @@ ui.登录按钮.on("click", () => { //点击登陆
 
 
 ui.退出按钮.on("click", () => { engines.stopAllAndToast(); });
-ui.联系QQ客服1.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=213053451" }); } catch (e) { toast("您还没有安装QQ"); }; });
+ui.联系QQ客服1.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=3289631470" }); } catch (e) { toast("您还没有安装QQ"); }; });
 ui.联系QQ客服2.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=1552317976" }); } catch (e) { toast("您还没有安装QQ"); } });
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ui.控制刷分按钮1.on("click", () => { //控制刷分按钮
