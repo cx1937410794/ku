@@ -401,18 +401,7 @@ function 运行执行() {
         ui.登录按钮.click();
     };
     // ui.检查更新按钮.click();
-    // xuexiIQIANGJUNID到期时间查询();
-
-    if (!$power_manager.isIgnoringBatteryOptimizations()) {
-        toastLog("❌未开启忽略电池优化，请求中...");
-        $power_manager.requestIgnoreBatteryOptimizations();
-        return;
-    };
-    if (floaty.checkPermission() != true) { //判断悬浮窗
-        toastLog("❌请先开启悬浮窗服务！");
-        floaty.requestPermission() //请求悬浮窗权限
-        return;
-    }
+    // xuexiIQIANGJUNID到期时间查询(); 
     if (auto.service == null) { //判断无障碍服务
         app.startActivity({
             action: "android.settings.ACCESSIBILITY_SETTINGS"
