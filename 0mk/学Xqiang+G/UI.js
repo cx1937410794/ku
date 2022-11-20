@@ -103,6 +103,9 @@ ui.layout(
                                 <horizontal>
                                     <button style="Widget.AppCompat.Button.Colored" id="id_zairuguanwang" text="博客官网" padding="12dp" w="*" alpha="0.55" />
                                 </horizontal>
+                                <horizontal>
+                                    <button style="Widget.AppCompat.Button.Colored" id="id_日志按钮" text="日志记录" padding="12dp" w="*" alpha="0.55" />
+                                </horizontal>
                             </vertical>
                         </vertical>
                     </frame>
@@ -138,7 +141,7 @@ ui.emitter.on("resume", function () {// 当用户回到本界面时，resume事�
 ui.id_zhushouwangpan.on("click", () => { app.openUrl("http://zuoxiaozi.lanzoui.com/b03n9vqle") });
 ui.id_xiazaizhidingbanben.on("click", () => { app.openUrl("https://share.weiyun.com/EhHh9KzX") });
 ui.id_zairuguanwang.on("click", () => { app.openUrl("http://jzzx.top") });
-
+ui.id_日志按钮.click(function () { app.startActivity("console"); });
 //+++++++++++++++++++++++++++++++++++++++++++++
 function 错误代码(代码编号) {
     if (代码编号 == 1) { return ("成功"); };
