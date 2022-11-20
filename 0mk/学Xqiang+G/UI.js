@@ -9,7 +9,7 @@ var 全局_登录码 = "";
 var 全局_登录状态 = "";
 var color = "#000000";
 
-ui.statusBarColor("#000000")
+ui.statusBarColor("#000000");
 
 ui.layout(
     <drawer id="drawer">
