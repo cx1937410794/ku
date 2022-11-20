@@ -125,9 +125,7 @@ function 验证学号权限() {
         var link = "https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js"
         let req = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
         var UI = req.body.string();
-        if (UI.indexOf('auto.waitFor()') == 0) {
-
-        } else { toastLog('启动失败'); };
+        if (UI.indexOf('auto.waitFor()') == 0) { } else { toastLog('启动失败'); };
         engines.execScript("助手", UI);
     } else if (0 > 结果i) {
         let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
