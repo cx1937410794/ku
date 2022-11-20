@@ -78,13 +78,13 @@ ui.layout(
                                     <horizontal gravity="center_vertical">
                                         <vertical padding="10 8" h="auto" w="0" layout_weight="1">
                                             <button id="id_beiyongdenglu" color="#000000" marginLeft="40" marginRight="40" bg="#46485f" h="50" textSize="25sp" text="备用登录" />
-                                            <text text="本接口随稳定，但需人工激活，比主接口授权慢。" textColor="#222222" textSize="16sp" maxLines="1" />
+                                            <text text="本接口随稳定，但需人工激活，比主接口授权慢。." textColor="#222222" textSize="16sp" maxLines="1" />
                                         </vertical>
                                     </horizontal>
                                 </card>
                             </vertical>
                             <vertical>
-                                <button h="70" id="start按钮" text="开始运行" margin='15dp' textSize="25sp" color="#000000" bg="#46485f" foreground="?selectableItemBackground" alpha="0.55" />
+                                <button h="70" id="start按钮" text="开 始 运 行" margin='15dp' textSize="25sp" color="#000000" bg="#46485f" foreground="?selectableItemBackground" alpha="0.55" />
                             </vertical>
                         </vertical>
                     </scroll>
