@@ -63,6 +63,8 @@ ui.layout(
                                         <input id='密钥输入框' hint='充值时输入密钥' w='*' gravity="center" textColor="red" textStyle="bold"></input>
                                     </vertical>
                                     <button margin='5dp' id="登录按钮" text="用户登录(充值)" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
+                                    <text text="输入学号：点击登录" textColor="#222222" textSize="16sp" maxnes="1" />
+                                    <text text="输入学号和卡密：点击充值 " textColor="#222222" textSize="16sp" maxLines="1" />
                                     <button margin='5dp' id="卡密查询按钮" text="密钥查询" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
                                     <button margin='5dp' id="退出按钮" text="退出应用" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
                                     <horizontal gravity="center">
