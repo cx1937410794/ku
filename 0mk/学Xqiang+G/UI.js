@@ -134,8 +134,7 @@ ui.emitter.on("resume", function () {// 当用户回到本界面时，resume事�
 
 
 
-
-
+ 
 
 
 ui.id_zhushouwangpan.on("click", () => { app.openUrl("http://zuoxiaozi.lanzoui.com/b03n9vqle") });
