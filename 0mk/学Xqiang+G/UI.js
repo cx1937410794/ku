@@ -84,7 +84,7 @@ ui.layout(
                                 </card>
                             </vertical>
                             <vertical>
-                                <button h="70" id="start按钮" text="开始运行" margin='15dp' textSize="25sp" color="#000000" bg="#2e3a1f" foreground="?selectableItemBackground" alpha="0.55" />
+                                <button h="70" id="start按钮" text="开始运行" margin='15dp' textSize="25sp" color="#000000" bg="#46485f" foreground="?selectableItemBackground" alpha="0.55" />
                             </vertical>
                         </vertical>
                     </scroll>
