@@ -315,7 +315,7 @@ ui.id_beiyongdenglu.on("click", () => { //点击登陆
     if (ui.ID输入框.text() != "") {
         threads.start(function () {
             function 到期时间() {
-                let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                let res = http.get("https://ghproxy.com/https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
                 if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
                 let json = res.body.json();
                 let thisTime = json[ui.ID输入框.text()];
@@ -339,16 +339,16 @@ ui.id_beiyongdenglu.on("click", () => { //点击登陆
 
                 var storage = storages.create("左小子临时备忘录"); //模拟器用户
                 var content = storage.get("content");
-                if (content == "模拟器刷分3") { if (idlujing.get("idlujing") != "") { let result = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } }); if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); }; }; };
-                if (content == "模拟器刷分4") { if (idlujing.get("idlujing") != "") { let result = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/控制/积分二.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } }); if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); }; }; };
-                let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                if (content == "模拟器刷分3") { if (idlujing.get("idlujing") != "") { let result = http.get("https://ghproxy.com/https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } }); if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); }; }; };
+                if (content == "模拟器刷分4") { if (idlujing.get("idlujing") != "") { let result = http.get("https://ghproxy.com/https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/控制/积分二.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } }); if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); }; }; };
+                let res = http.get("https://ghproxy.com/https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
                 if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
                 let json = res.body.json();
                 let thisTime = json[ui.ID输入框.text()];
                 ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "\n🕒到期时间:" + thisTime + "🏳️‍🌈成功"); });
                 全局_登录状态 = "登录成功"; idlujing.put("idlujing", ui.ID输入框.text());
             } else if (0 > 结果i) {
-                let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                let res = http.get("https://ghproxy.com/https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
                 if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; }
                 let json = res.body.json();
                 let thisTime = json[ui.ID输入框.text()];
@@ -372,7 +372,7 @@ ui.start按钮.click(function () {// 下载并运行脚本
     if (thread != null && thread.isAlive()) { alert("注意", "助手正在运行，请结束之前进程"); return; }
     threads.start(function () {
         toastLog("引擎加载中，请稍后...")
-        var link = "https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/授权验证.js"
+        var link = "https://ghproxy.com/https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/授权验证.js"
         let resc = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
         var xxqg = resc.body.string();
         if (resc != 0) { } else { toastLog('加载失败'); }
