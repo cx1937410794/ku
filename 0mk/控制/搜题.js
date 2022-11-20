@@ -499,7 +499,7 @@ function 查题(题目) {
   });
 
   threads.start(function () {
-    let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/控制/项目题库.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+    let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/项目题库.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
     let json = res.body.json();
     var 答案 = json[题目];
     ui.run(function () {
@@ -734,7 +734,7 @@ function checkid() { //检查id函数
     toast("正在进行身份验证");
     threads.start(function () {
       function 到期时间() {
-        let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/UI/右侧账号.json", {
+        let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/UI/右侧账号.json", {
           headers: {
             'Accept-Language': 'zh-cn,zh;q=0.5',
             'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11'
@@ -774,7 +774,7 @@ function checkid() { //检查id函数
         搜题权限 = "真"
         alert("验证成功")
       } else if (0 > 结果i) {
-        let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/UI/右侧账号.json", {
+        let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/UI/右侧账号.json", {
           headers: {
             'Accept-Language': 'zh-cn,zh;q=0.5',
             'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11'
