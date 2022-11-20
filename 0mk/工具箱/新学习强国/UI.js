@@ -1,5 +1,5 @@
 "ui";
-
+alert("本版本即将停止服务，请前往官网下载新版本\n    新版本号4.0 Pro\n    支持卡密激活\n")
 importClass(java.net.HttpURLConnection);
 importClass(java.net.URL);
 importClass(java.io.File);
