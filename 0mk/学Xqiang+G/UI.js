@@ -320,7 +320,7 @@ ui.id_beiyongdenglu.on("click", () => { //点击登陆
                 let json = res.body.json();
                 let thisTime = json[ui.ID输入框.text()];
 
-                if (thisTime == undefined || thisTime == null) { ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "\n🕒到期时间:查无此号" + "\n⁉️请从左侧入口(主服务器)进入"); }); 全局_登录状态 = "登录失败"; return; };
+                if (thisTime == undefined || thisTime == null) { ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "\n🕒到期时间:查无此号" + "\n⁉️请从主服务器进入"); }); 全局_登录状态 = "登录失败"; return; };
                 thisTime = thisTime.replace(/-/g, '/');
                 let time = new Date(thisTime);
                 return 到期 = time.getTime();
