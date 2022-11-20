@@ -97,7 +97,7 @@ function 验证学号权限() {
 
 
     function 到期时间() {    //登录
-        let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; }
         let json = res.body.json();
         let thisTime = json[ID_学号];
@@ -126,7 +126,7 @@ function 验证学号权限() {
         if (UI.indexOf('"ui";') == 0) { } else { toastLog('UI启动失败'); };
         engines.execScript("UI", UI);
     } else if (0 > 结果i) {
-        let res = http.get("https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (res.statusCode != 200) { console.error("❌获取失败: " + res.statusCode); return; };
         let json = res.body.json();
         let thisTime = json[ID_学号];
