@@ -6,7 +6,7 @@ function real_click(obj) {
         if (obj.click()) { log("real click: true"); return true; }
         sleep(300);
     };
-    console.warn("控件无法正常点击：", obj);
+    toastLog("控件无法正常点击：", obj);
     log("尝试再次点击");
     click(obj.bounds().centerX(), obj.bounds().centerY());
     return false;
@@ -63,9 +63,10 @@ function 返回强国首页() {
         if ("com.alibaba.android.rimet.biz.SplashActivity" == currentActivity()) {
             continue;
         };
-        console.log("返回主页...");
+        toastLog("返回主页...");
         sleep(random(1000, 1500));
         back();
+         
         sleep(random(1000, 1500));
 
     };
@@ -86,13 +87,13 @@ function 验证学号权限() {
     id("tv_item_title").className("android.widget.TextView").text("学号").waitFor();
     while (!text("学号").exists());
     ID_学号 = id("tv_item_content").findOnce(1).parent().child(1).text();
-    console.log("学号：", ID_学号);
+    toastLog("学号：", ID_学号);
     idlujing.put("ID_学号", ID_学号); //存ID
     //获取用户名
     id("tv_item_title").className("android.widget.TextView").text("昵称").waitFor()
     while (!text("昵称").exists());
     name = id("tv_item_content").findOnce(0).parent().child(1).text();
-    console.log("用户名：", name);
+    toastLog("用户名：", name);
 
 
 
@@ -123,8 +124,7 @@ function 验证学号权限() {
         // threads.start(function () {
         let url = 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js';
         execution = engines.execScript("星月书", http.get(url).body.string());
-        // });
-        // console.clear();
+        // }); 
         // http.__okhttp__.setTimeout(10000);
         // var link = "https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js"
         // let req = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
@@ -133,10 +133,9 @@ function 验证学号权限() {
         // engines.execScript("助手", UI);
     } else if (0 > 结果i) {
         let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
-        if (res.statusCode != 200) { console.error("❌获取失败: " + res.statusCode); return; };
+        if (res.statusCode != 200) { toastLog("❌获取失败: " + res.statusCode); return; };
         let json = res.body.json();
-        let thisTime = json[ID_学号];
-        // console.
+        let thisTime = json[ID_学号]; 
         toastLog("ID：" + ID_学号 + "\n🕒到期时间:" + thisTime + "\nID到期，请充值.\n尝试切换第二服务器");
         第二服务器();
         return;
@@ -145,11 +144,11 @@ function 验证学号权限() {
 
     function 第二服务器() {
         var 登陆信息 = http.post("http://w.eydata.net/F7070128475F611E", { "UserName": "b" + ID_学号, "UserPwd": "b" + ID_学号, "Version": '3.2.6', "Mac": device.model }); //登录
-        登陆返回信息 = 登陆信息.body.string(); // console.log(登陆返回信息);
+        登陆返回信息 = 登陆信息.body.string(); // toastLog(登陆返回信息);
         if (登陆返回信息.length == 32) {
             var 退出登录 = http.post("http://w.eydata.net/97A7730FD7832AB7", { "StatusCode": 登陆返回信息, "UserName": "b" + ID_学号 });
             退出结果 = 退出登录.body.string();
-            console.log(退出结果);
+            toastLog(退出结果);
             if (退出结果 == "1") {
                 //************************* */
                 //服务器二验证成功
@@ -169,14 +168,14 @@ function 验证学号权限() {
                 // var UI = req.body.string();
                 // if (UI.indexOf('auto.waitFor()') == 0) { } else { toastLog('助手启动失败'); };
                 // engines.execScript("UI", UI);
-            } else { console.error("操作失败"); exit(); };
+            } else { toastLog("操作失败"); exit(); };
             return true //返回登陆成功
         } else if (登陆返回信息 == -110) {
-            console.error("❌时间已到期,请充值."); return false;
+            toastLog("❌时间已到期,请充值."); return false;
         } else if (登陆返回信息 == -115) {
-            console.error("用户已被禁用，如有疑问请联系客服。"); return false;
+            toastLog("用户已被禁用，如有疑问请联系客服。"); return false;
         } else if (登陆返回信息 == -102) {
-            console.error("❌用户不存在.请检查登陆的ID是否一致！"); return false;
+            toastLog("❌用户不存在.请检查登陆的ID是否一致！"); return false;
         };
     };
 
