@@ -56,7 +56,7 @@ function 返回强国首页() {
     app.launchApp('学习强国');
     let flag = false;
     while (!flag) {
-        if (desc("工作").exists()) {
+        if (text("工作").exists()) {
             flag = true;
             break;
         }
