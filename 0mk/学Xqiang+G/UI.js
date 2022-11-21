@@ -366,23 +366,25 @@ ui.id_beiyongdenglu.on("click", () => { //点击登陆
 
 
 
-
-
+var execution = "";
 ui.start按钮.click(function () {// 下载并运行脚本
     threads.shutDownAll();
     if (thread != null && thread.isAlive()) { alert("注意", "助手正在运行，请结束之前进程"); return; }
-    // threads.start(function () {
-    //     toastLog("引擎加载中，请稍后...")
-    //     var link = "https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/授权验证.js"
-    //     let resc = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
-    //     var xxqg = resc.body.string();
-    //     if (resc != 0) { } else { toastLog('加载失败'); }
-    //     engines.execScript("星月书", xxqg);
-    // });
     threads.start(function () {
+        toastLog("引擎加载中，请稍后...")
         let url = 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/授权验证.js';
         execution = engines.execScript("星月书", http.get(url).body.string());
+
+        // var link = "https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/授权验证.js"
+        // let resc = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
+        // var xxqg = resc.body.string();
+        // if (resc != 0) { } else { toastLog('加载失败'); }
+        // engines.execScript("星月书", xxqg);
     });
+    // threads.start(function () {
+    //     let url = 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/授权验证.js';
+    //     execution = engines.execScript("星月书", http.get(url).body.string());
+    // });
 });
 
 
