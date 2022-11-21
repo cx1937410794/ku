@@ -100,7 +100,11 @@ function 验证学号权限() {
         if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; }
         let json = res.body.json();
         let thisTime = json[ID_学号];
-        if (thisTime == undefined || thisTime == null) { toastLog("ID：" + ID_学号 + "\n🕒到期时间:查无此号.\n尝试切换第二服务器"); 第二服务器(); return; };
+        if (thisTime == undefined || thisTime == null) {
+            toastLog("ID：" + ID_学号 + "\n🕒到期时间:查无此号.\n尝试切换第二服务器"); 第二服务器(); return;
+        } else {
+            toastLog("到期时间：" + thisTime)
+        };
         thisTime = thisTime.replace(/-/g, '/');
         let time = new Date(thisTime);
         return 到期 = time.getTime();
