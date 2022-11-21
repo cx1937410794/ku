@@ -138,7 +138,9 @@ ui.emitter.on("resume", function () {// 当用户回到本界面时，resume事�
 
 
 ui.id_zhushouwangpan.on("click", () => { app.openUrl("http://zuoxiaozi.lanzoui.com/b03n9vqle") });
-ui.id_xiazaizhidingbanben.on("click", () => { app.openUrl("https://share.weiyun.com/EhHh9KzX") });
+ui.id_xiazaizhidingbanben.on("click", () => { app.openUrl("https://android-apps.pp.cn/fs08/2021/12/28/3/110_f37c420b0944cb7b9f60a2ad9b5518d2.apk?yingid=web_space&packageid=500730793&md5=664bb7bdcae57be189fc86100f4371c4&minSDK=21&size=191654161&shortMd5=1fee0bd160d08108a9d9e5f4773ce741&crc32=3879122865&did=ad484a175e19d0928044435e24bf03cb") });
+
+https://share.weiyun.com/EhHh9KzX") });
 ui.id_zairuguanwang.on("click", () => { app.openUrl("http://jzzx.top") });
 ui.id_日志按钮.click(function () { app.startActivity("console"); });
 //+++++++++++++++++++++++++++++++++++++++++++++
