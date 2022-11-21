@@ -72,7 +72,7 @@ ui.layout(
                                     <horizontal gravity="center">
                                         <button margin='5dp' id='备用登陆' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='备用登陆(原:右侧入口)'></button>
                                         <button margin='5dp' id='我的ID' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text="{{unescape('\u67e5\u8be2\u8c0b\u804c\u0049\u0044')}}"></button>
-                                        <button margin='5dp' id="退出按钮" text="退出应用" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
+                                        <button margin='5dp' id="退出按钮" text="退出应用" w="100" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
                                     </horizontal>
                                 </vertical>
                             </ScrollView>
