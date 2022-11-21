@@ -397,10 +397,10 @@ ui.start按钮.click(function () {// 下载并运行脚本
 
 
 function 运行执行() {
-    if (!idlujing.get("idlujing")) {
+    if (!idlujing.get("ID_学号")) {
         ui.标签1.text("⚠️请先激活ID后登录");
     } else {
-        ui.ID输入框.text(idlujing.get("idlujing"));
+        ui.ID输入框.text(idlujing.get("ID_学号"));
         ui.登录按钮.click();
     };
     // ui.检查更新按钮.click();

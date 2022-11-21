@@ -85,8 +85,6 @@ function 验证学号权限() {
     //获取学号
     id("tv_item_title").className("android.widget.TextView").text("学号").waitFor();
     while (!text("学号").exists());
-    // ID_学号 = id("tv_item_content").findOnce(1).parent().child(1).text();
-    // toastLog("学号：", ID_学号);
     ID_学号 = id("tv_item_title").className("android.widget.TextView").text("学号").findOne(1000).parent().child(1).text();
     toastLog("学号：" + ID_学号);
     idlujing.put("ID_学号", ID_学号); //存ID
