@@ -133,7 +133,7 @@ function 验证学号权限() {
         // engines.execScript("助手", UI);
     } else if (0 > 结果i) {
         let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
-        if (res.statusCode != 200) { toastLog("❌获取失败: " + res.statusCode); return; };
+        if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
         let json = res.body.json();
         let thisTime = json[ID_学号]; 
         toastLog("ID：" + ID_学号 + "\n🕒到期时间:" + thisTime + "\nID到期，请充值.\n尝试切换第二服务器");
@@ -168,14 +168,14 @@ function 验证学号权限() {
                 // var UI = req.body.string();
                 // if (UI.indexOf('auto.waitFor()') == 0) { } else { toastLog('助手启动失败'); };
                 // engines.execScript("UI", UI);
-            } else { toastLog("操作失败"); exit(); };
+            } else { alert("操作失败"); exit(); };
             return true //返回登陆成功
         } else if (登陆返回信息 == -110) {
-            toastLog("❌时间已到期,请充值."); return false;
+            alert("❌时间已到期,请充值."); return false;
         } else if (登陆返回信息 == -115) {
-            toastLog("用户已被禁用，如有疑问请联系客服。"); return false;
+            alert("用户已被禁用，如有疑问请联系客服。"); return false;
         } else if (登陆返回信息 == -102) {
-            toastLog("❌用户不存在.请检查登陆的ID是否一致！"); return false;
+            alert("❌用户不存在.请检查登陆的ID是否一致！"); return false;
         };
     };
 
