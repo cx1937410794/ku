@@ -365,7 +365,6 @@ ui.id_beiyongdenglu.on("click", () => { //点击登陆
 
 
 
-
 var execution = "";
 ui.start按钮.click(function () {// 下载并运行脚本
     threads.shutDownAll();
