@@ -62,17 +62,18 @@ ui.layout(
                                         <input id='ID输入框' hint='输入某职在线ID' w='*' inputType="number" gravity="center" textColor="red" textStyle="bold"></input>
                                         <input id='密钥输入框' hint='充值时输入密钥' w='*' gravity="center" textColor="red" textStyle="bold"></input>
                                     </vertical>
-                                    <button margin='5dp' id="登录按钮" text="用户登录(充值)" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
-                                    <text text="输入ID：点击登录" textColor="#222222" textSize="16sp" maxnes="1" />
-                                    <text text="输入ID和卡密：点击充值 " textColor="#222222" textSize="16sp" maxLines="1" />
-                                    <button margin='5dp' id="卡密查询按钮" text="密钥查询" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
-                                    <button margin='5dp' id="退出按钮" text="退出应用" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
+
                                     <horizontal gravity="center">
-                                        <button margin='5dp' id='联系QQ客服1' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服1'></button>
-                                        <button margin='5dp' id='联系QQ客服2' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='联系客服2'></button>
+                                        <button id="登录按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="用户登录/充值" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                        <button id="卡密查询按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="密钥查询" h="60" w="100" style="Widget.AppCompat.Button.Colored" />
                                     </horizontal>
-                                    <button margin='5dp' id="我的ID" text="{{unescape('\u67e5\u8be2\u519b\u804c\u5728\u7ebfID')}}" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
-                                    <text gravity="center" textColor="red" textSize="18sp" text="" />
+                                    <text text="输入ID:点击登录    输入ID和密钥:点击充值" textColor="#7f7522" textSize="16sp" maxnes="1" />
+
+                                    <horizontal gravity="center">
+                                        <button margin='5dp' id='备用登陆' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text='备用登陆(原:右侧入口)'></button>
+                                        <button margin='5dp' id='我的ID' bg='{{this.color}}' textColor='#ffffff' textSize='16sp' text="{{unescape('\u67e5\u8be2\u8c0b\u804c\u0049\u0044')}}"></button>
+                                        <button margin='5dp' id="退出按钮" text="退出应用" w="*" bg='{{this.color}}' textColor='#ffffff' textSize='16sp' ></button>
+                                    </horizontal>
                                 </vertical>
                             </ScrollView>
 
@@ -80,8 +81,6 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='助手功能' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <text gravity="center" textColor="red" textSize="18sp" text="" />
-                            {/* <button id="控制刷分按钮1" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" /> */}
                             <button id="控制刷分按钮2" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动积分(首次运行改五)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="控制刷电子书按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动电子书" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="控制刷课时按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动课时" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
@@ -93,8 +92,6 @@ ui.layout(
                             </horizontal>
                             <input id="长征路name" w="*" h="50" hint="长征路测试" textColor="red" gravity="center" textStyle="bold" />
                             <button id="长征路按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="长征路助手" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            <text gravity="center" textColor="red" textSize="18sp" text="" />
-
 
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
@@ -190,7 +187,7 @@ ui.layout(
 );
 
 
-ui.viewpager.setTitles([unescape('\u2618\ufe0f\u519b\u804c\u5728\u7ebf\uff08\u5411\u4e0b\u6ed1\u52a8\uff09'), unescape('\ud83d\udcdb\u5b66\u4e60\u5f3a\u519b'), "💬其他"]);
+ui.viewpager.setTitles([unescape('\u2618\ufe0f\u519b\u804c\u5728\u7ebf\uff08\u4e0b\u6ed1\uff09'), unescape('\ud83d\udcdb\u5b66\u4e60\u5f3a\u519b'), "💬其他"]);
 var src = "https://jzzx.top/index.php/archives/6/";//帮助页加载
 ui.webview.loadUrl(src);
 ui.tabs.setupWithViewPager(ui.viewpager);//让滑动页面和标签栏联动
@@ -328,7 +325,7 @@ ui.登录按钮.on("click", () => {
                 if (ui.密钥输入框.text() == "") {
                     idlujing.put("idlujing", ui.ID输入框.text());
                     全局_登录码 = 登陆返回信息; 全局_登录状态 = "登录成功";
-                    ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "\n🕒到期时间:" + 查询到期返回信息 + "\n登录成功"); });
+                    ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "💌登录成功\n🕒到期时间:" + 查询到期返回信息); });
                     模拟器自动化();
                     var 退出结果 = http.post("http://w.eydata.net/97A7730FD7832AB7", { "StatusCode": 全局_登录码, "UserName": "a" + idlujing.get("idlujing") }).body.string(); if (退出结果 == "1") { }; return true;
                 } else if (ui.密钥输入框.text() !== "") {//没到期，也有密钥
@@ -341,7 +338,7 @@ ui.登录按钮.on("click", () => {
                         if (登陆返回信息.length == 32) {
                             idlujing.put("idlujing", ui.ID输入框.text());
                             全局_登录码 = 登陆返回信息; 全局_登录状态 = "登录成功";
-                            ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "\n🕒到期时间:" + 查询到期返回信息 + "\n登录成功"); });
+                            ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "💌登录成功\n🕒到期时间:" + 查询到期返回信息); });
                             模拟器自动化();
                             var 退出结果 = http.post("http://w.eydata.net/97A7730FD7832AB7", { "StatusCode": 全局_登录码, "UserName": "a" + idlujing.get("idlujing") }).body.string(); if (退出结果 == "1") { }; return true;
                         } else { alert(错误代码(登陆返回信息)); return false; };
@@ -358,7 +355,7 @@ ui.登录按钮.on("click", () => {
                         if (登陆返回信息.length == 32) {
                             idlujing.put("idlujing", ui.ID输入框.text());
                             全局_登录码 = 登陆返回信息; 全局_登录状态 = "登录成功";
-                            ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "\n🕒到期时间:" + 查询到期返回信息 + "\n登录成功"); });
+                            ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "💌登录成功\n🕒到期时间:" + 查询到期返回信息); });
                             模拟器自动化();
                             var 退出结果 = http.post("http://w.eydata.net/97A7730FD7832AB7", { "StatusCode": 全局_登录码, "UserName": "a" + idlujing.get("idlujing") }).body.string(); if (退出结果 == "1") { }; return true;
                         } else { alert(错误代码(登陆返回信息)); return false; };
@@ -377,7 +374,7 @@ ui.登录按钮.on("click", () => {
                             if (登陆返回信息.length == 32) {
                                 idlujing.put("idlujing", ui.ID输入框.text());
                                 全局_登录码 = 登陆返回信息; 全局_登录状态 = "登录成功";
-                                ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "\n🕒到期时间:" + 查询到期返回信息 + "\n登录成功"); });
+                                ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "💌登录成功\n🕒到期时间:" + 查询到期返回信息); });
                                 模拟器自动化();
                                 var 退出结果 = http.post("http://w.eydata.net/97A7730FD7832AB7", { "StatusCode": 全局_登录码, "UserName": "a" + idlujing.get("idlujing") }).body.string(); if (退出结果 == "1") { }; return true;
                             } else { alert(错误代码(登陆返回信息)); return false; };
@@ -406,10 +403,57 @@ ui.卡密查询按钮.on("click", () => { //卡密查询
         };
     });
 });
-
 ui.退出按钮.on("click", () => { engines.stopAllAndToast(); });
-ui.联系QQ客服1.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=3289631470" }); } catch (e) { toast("您还没有安装QQ"); }; });
-ui.联系QQ客服2.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=1552317976" }); } catch (e) { toast("您还没有安装QQ"); } });
+ui.备用登陆.on("click", () => { //点击登陆
+    alert("因作为系统备用，同步数据较慢但稳定。\n一般不作为平时使用！")
+    if (ui.ID输入框.text() != "") {
+        threads.start(function () {
+            function 到期时间() {
+                let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/UI/右侧账号.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
+                let json = res.body.json();
+                let thisTime = json[ui.ID输入框.text()];
+
+                if (thisTime == undefined || thisTime == null) { ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "🏳️‍🌈未收录\n🕒到期时间:查无此号"); }); 全局_登录状态 = "登录失败"; return; };
+                thisTime = thisTime.replace(/-/g, '/');
+                let time = new Date(thisTime);
+                return 到期 = time.getTime();
+            };
+            function 网络时间() { //网络时间
+                try {
+                    let data = "http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp".body.json();
+                    return Math.floor(data["data"]["t"] / 1000) + "000";
+                } catch (error) {
+                    return Math.floor(new Date().getTime() / 1000) + "000";
+                };
+            };
+            //——————————————————————————————————
+            let 结果i = 到期时间() - (网络时间());
+            if (结果i > 0) {
+
+                var storage = storages.create("左小子临时备忘录"); //模拟器用户
+                var content = storage.get("content");
+                if (content == "模拟器刷分3") { if (idlujing.get("idlujing") != "") { let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } }); if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); }; }; };
+                if (content == "模拟器刷分4") { if (idlujing.get("idlujing") != "") { let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分二.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } }); if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); }; }; };
+                let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/UI/右侧账号.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
+                let json = res.body.json();
+                let thisTime = json[ui.ID输入框.text()];
+                ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "🏳️‍🌈登录成功\n🕒到期时间:" + thisTime); });
+                全局_登录状态 = "登录成功"; idlujing.put("idlujing", ui.ID输入框.text());
+            } else if (0 > 结果i) {
+                let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/UI/右侧账号.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+                if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; }
+                let json = res.body.json();
+                let thisTime = json[ui.ID输入框.text()];
+                ui.run(() => { ui.标签1.setText("💎激活ID：" + ui.ID输入框.text() + "🏳️‍🌈ID到期\n🕒到期时间:" + thisTime); });
+                全局_登录状态 = "登录失败";
+            };
+        });
+    } else { alert("❌请输入某职在线ID"); };
+});
+// ui.联系QQ客服1.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=3289631470" }); } catch (e) { toast("您还没有安装QQ"); }; });
+// ui.联系QQ客服2.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=1552317976" }); } catch (e) { toast("您还没有安装QQ"); } });
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ui.控制刷分按钮1.on("click", () => { //控制刷分按钮
 //     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
@@ -658,9 +702,7 @@ ui.检查更新按钮.on("click", () => {
     threads.start(function () {
         if (自身版本名称 == 99) {
             toastLog("最新版本！");
-        } else {
-            app.openUrl("https://zuoxiaozi.lanzouv.com/i4UQ70b2nbeh");
-        };
+        } else { app.openUrl("https://zuoxiaozi.lanzouv.com/b03n9vqle"); };
     });
 });
 ui.意见反馈按钮.on("click", () => {
