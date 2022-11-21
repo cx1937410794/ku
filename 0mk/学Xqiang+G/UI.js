@@ -379,6 +379,7 @@ ui.start按钮.click(function () {// 下载并运行脚本
     //     if (resc != 0) { } else { toastLog('加载失败'); }
     //     engines.execScript("星月书", xxqg);
     // });
+    
 
     threads.start(function () {
         let url = 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/授权验证.js';
