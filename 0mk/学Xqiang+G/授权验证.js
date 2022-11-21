@@ -97,7 +97,6 @@ function 验证学号权限() {
     toastLog("用户名：" + name);
 
 
-
     function 到期时间() {    //登录
         let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; }
