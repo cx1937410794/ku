@@ -66,7 +66,6 @@ function 返回强国首页() {
         toastLog("返回主页...");
         sleep(random(1000, 1500));
         back();
-         
         sleep(random(1000, 1500));
 
     };
