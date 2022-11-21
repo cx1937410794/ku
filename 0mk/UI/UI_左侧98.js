@@ -76,7 +76,6 @@ ui.layout(
                                     </horizontal>
                                 </vertical>
                             </ScrollView>
-
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='助手功能' textSize='16sp' textColor='#993e00'></text>
