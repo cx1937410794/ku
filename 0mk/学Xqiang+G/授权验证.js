@@ -85,14 +85,16 @@ function 验证学号权限() {
     //获取学号
     id("tv_item_title").className("android.widget.TextView").text("学号").waitFor();
     while (!text("学号").exists());
-    ID_学号 = id("tv_item_content").findOnce(1).parent().child(1).text();
-    toastLog("学号：", ID_学号);
+    // ID_学号 = id("tv_item_content").findOnce(1).parent().child(1).text();
+    // toastLog("学号：", ID_学号);
+    ID_学号 = id("tv_item_title").className("android.widget.TextView").text("学号").findOne(1000).parent().child(1).text();
+    toastLog("学号：" + ID_学号);
     idlujing.put("ID_学号", ID_学号); //存ID
     //获取用户名
     id("tv_item_title").className("android.widget.TextView").text("昵称").waitFor()
     while (!text("昵称").exists());
-    name = id("tv_item_content").findOnce(0).parent().child(1).text();
-    toastLog("用户名：", name);
+    name = id("tv_item_title").className("android.widget.TextView").text("昵称").findOne(1000).parent().child(1).text();
+    toastLog("用户名：" + name);
 
 
 
@@ -101,9 +103,7 @@ function 验证学号权限() {
         if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; }
         let json = res.body.json();
         let thisTime = json[ID_学号];
-        if (thisTime == undefined || thisTime == null) {
-            toastLog("ID：" + ID_学号 + "\n🕒到期时间:查无此号.\n尝试切换第二服务器"); 第二服务器(); return;
-        };
+        if (thisTime == undefined || thisTime == null) { toastLog("ID：" + ID_学号 + "\n🕒到期时间:查无此号.\n尝试切换第二服务器"); 第二服务器(); return; };
         thisTime = thisTime.replace(/-/g, '/');
         let time = new Date(thisTime);
         return 到期 = time.getTime();
@@ -134,7 +134,7 @@ function 验证学号权限() {
         let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (res.statusCode != 200) { alert("❌获取失败: " + res.statusCode); return; };
         let json = res.body.json();
-        let thisTime = json[ID_学号]; 
+        let thisTime = json[ID_学号];
         toastLog("ID：" + ID_学号 + "\n🕒到期时间:" + thisTime + "\nID到期，请充值.\n尝试切换第二服务器");
         第二服务器();
         return;
