@@ -120,13 +120,17 @@ function 验证学号权限() {
         back();
         exit_app("学习强国");
 
-        console.clear();
-        http.__okhttp__.setTimeout(10000);
-        var link = "https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js"
-        let req = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
-        var UI = req.body.string();
-        if (UI.indexOf('auto.waitFor()') == 0) { } else { toastLog('启动失败'); };
-        engines.execScript("助手", UI);
+        // threads.start(function () {
+        let url = 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js';
+        execution = engines.execScript("星月书", http.get(url).body.string());
+        // });
+        // console.clear();
+        // http.__okhttp__.setTimeout(10000);
+        // var link = "https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js"
+        // let req = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
+        // var UI = req.body.string();
+        // if (UI.indexOf('auto.waitFor()') == 0) { } else { toastLog('启动失败'); };
+        // engines.execScript("助手", UI);
     } else if (0 > 结果i) {
         let res = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/账号信息.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
         if (res.statusCode != 200) { console.error("❌获取失败: " + res.statusCode); return; };
@@ -154,13 +158,17 @@ function 验证学号权限() {
                 back();
                 exit_app("学习强国");
 
-                console.clear();
-                http.__okhttp__.setTimeout(10000);
-                var link = "https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js"
-                let req = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
-                var UI = req.body.string();
-                if (UI.indexOf('auto.waitFor()') == 0) { } else { toastLog('助手启动失败'); };
-                engines.execScript("UI", UI);
+                // threads.start(function () {
+                let url = 'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js';
+                execution = engines.execScript("星月书", http.get(url).body.string());
+                // });
+                // console.clear();
+                // http.__okhttp__.setTimeout(10000);
+                // var link = "https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/学Xqiang+G/自动QG.js"
+                // let req = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
+                // var UI = req.body.string();
+                // if (UI.indexOf('auto.waitFor()') == 0) { } else { toastLog('助手启动失败'); };
+                // engines.execScript("UI", UI);
             } else { console.error("操作失败"); exit(); };
             return true //返回登陆成功
         } else if (登陆返回信息 == -110) {
