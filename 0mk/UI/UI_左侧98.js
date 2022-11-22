@@ -699,7 +699,7 @@ ui.更新日志按钮.on("click", () => {
 
 ui.检查更新按钮.on("click", () => {
     threads.start(function () {
-        if (自身版本名称 == 99) {
+        if (自身版本名称 == 101) {
             toastLog("最新版本！");
         } else { app.openUrl("https://zuoxiaozi.lanzouv.com/b03n9vqle"); };
     });
