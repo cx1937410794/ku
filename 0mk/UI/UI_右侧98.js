@@ -35,7 +35,7 @@ ui.layout(
     <drawer id="drawer">
         <vertical>
             <appbar id='appbar' bg='{{this.color}}'>
-                <toolbar id="toolbar" title="左小子助手_主服务器  V{{this.自身版本名称}}" />
+                <toolbar id="toolbar" title="左小子助手_应急网络  V{{this.自身版本名称}}" />
                 <tabs id="tabs" textSize="20" />
             </appbar>
             <viewpager id="viewpager">
