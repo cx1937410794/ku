@@ -63,10 +63,10 @@ function 返回强国首页() {
         if ("com.alibaba.android.rimet.biz.SplashActivity" == currentActivity()) {
             continue;
         };
-        toastLog("返回主页...");
+        toastLog("等待强国APP首页");
         sleep(random(1000, 1500));
-        back();
-        sleep(random(1000, 1500));
+        // back();
+        // sleep(random(1000, 1500));
 
     };
 };
