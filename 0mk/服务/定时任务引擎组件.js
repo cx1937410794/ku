@@ -33,7 +33,7 @@ function killApp(name) {
 
 
 
-let result = http.get("https://zuoxiaozi.top/0mk/控制/积分二.js", {
+let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分二.js", {
     headers: {
         'Accept-Language': 'zh-cn,zh;q=0.5',
         'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11'
