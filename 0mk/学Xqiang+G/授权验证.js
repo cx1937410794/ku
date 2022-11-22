@@ -64,9 +64,9 @@ function 返回强国首页() {
             continue;
         };
         toastLog("等待强国APP首页");
-        sleep(random(1000, 1500));
-        // back();
-        // sleep(random(1000, 1500));
+        sleep(random(1000, 2000));
+        back();
+        sleep(random(1000, 2000));
 
     };
 };
