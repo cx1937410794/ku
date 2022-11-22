@@ -26,8 +26,8 @@ function killApp(name) {
         }
     } else {
         toastLog("应用不存在");
-    }
-}
+    };
+};
 
 
 
