@@ -9,7 +9,6 @@ packageName = context.getPackageName()
 packageInfo = pm.getPackageInfo(packageName, 0)
 var 自身版本名称 = packageInfo.versionName
 // alert(自身版本名称);
-
 // https://zuoxiaozi.lanzouv.com/b03n9vqle
 threads.start(function () {
     更新功能(
