@@ -236,7 +236,7 @@ function 订阅强军号线程(当前数量) {
                         绿色弹窗("关注成功");
                         订阅强军号成功的数量++;
                     } else if (id("course_type_focus").text("已关注").exists()) {
-                        黄色弹窗(("已关注")); back();
+                        toastLog("已关注"); back();
                     };
                 } else {
                     log("完成任务关注");
