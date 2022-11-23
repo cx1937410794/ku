@@ -41,7 +41,7 @@ ui.layout(
             <text id="" h="auto" w="auto" text="2.登录之后，点击我的->第三方接入->绑定需要同步的第三方平台；" textSize="18sp" textColor="#4f5555" />
             <text id="" h="auto" w="auto" text="3.回到本助手，提交步数即可同步至你绑定的所有平台；" textSize="18sp" textColor="#4f5555" />
 
-            <text id="" h="auto" w="auto" text="生活本沉闷，跑起来才有风！" textSize="18sp" textColor="green" />
+            <text id="yiyan" h="auto" w="auto" text="生活本沉闷，跑起来才有风！" textSize="18sp" textColor="green" />
         </vertical>
     </frame>
 );
@@ -56,7 +56,8 @@ threads.start(function () {
 
 
 ui.提交刷步数.on("click", () => {
-    alert("提交步数"); ui.run(() => { ui.结果.setText("提交步数"); }); 取存配置项.put("账号", ui.账号.text()); 取存配置项.put("密码", ui.密码.text()); 取存配置项.put("步数", ui.步数.text());
+    alert("提交步数"); 每日一言();
+    ui.run(() => { ui.结果.setText("提交步数"); }); 取存配置项.put("账号", ui.账号.text()); 取存配置项.put("密码", ui.密码.text()); 取存配置项.put("步数", ui.步数.text());
     threads.start(function () {
         var 刷步数API = http.post("https://api.iculture.cc/api/run/?do=shuabu", {
             "user": ui.账号.text(),
@@ -76,7 +77,7 @@ ui.提交刷步数.on("click", () => {
 
 
 ui.提交刷步数二号.on("click", () => {
-    alert("提交步数");
+    alert("提交步数"); 每日一言();
     ui.run(() => { ui.结果二号.setText("提交步数"); }); 取存配置项.put("账号", ui.账号.text()); 取存配置项.put("密码", ui.密码.text()); 取存配置项.put("步数", ui.步数.text());
     threads.start(function () {
         var 刷步数API = http.post("https://apis.jxcxin.cn/api/mi", {
@@ -98,7 +99,7 @@ ui.提交刷步数二号.on("click", () => {
 
 
 ui.提交刷步数三号.on("click", () => {
-    alert("提交步数");
+    alert("提交步数"); 每日一言();
     ui.run(() => { ui.结果三号.setText("提交步数"); }); 取存配置项.put("账号", ui.账号.text()); 取存配置项.put("密码", ui.密码.text()); 取存配置项.put("步数", ui.步数.text());
     threads.start(function () {
         var 刷步数API = http.post("https://api.kit9.cn/api/xiaomi_sports/api.php", {
@@ -117,7 +118,7 @@ ui.提交刷步数三号.on("click", () => {
 
 
 ui.提交刷步数四号.on("click", () => {
-    alert("提交步数");
+    alert("提交步数"); 每日一言();
     ui.run(() => { ui.结果四号.setText("提交步数"); }); 取存配置项.put("账号", ui.账号.text()); 取存配置项.put("密码", ui.密码.text()); 取存配置项.put("步数", ui.步数.text());
     threads.start(function () {
         var 刷步数API = http.post("https://api.kit9.cn/api/xiaomi_sports/api_email_fixed.php", {
@@ -131,4 +132,13 @@ ui.提交刷步数四号.on("click", () => {
             alert("服务器BUG，请联系客服。");
         };
     });
-}); 
+});
+
+
+
+function 每日一言() {
+    threads.start(function () {
+        let result = http.get("https://v.api.aa1.cn/api/api-wenan-anwei/index.php?type=json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+        if (result.statusCode == 200) { ui.run(() => { ui.yiyan.setText(result.body.json().anwei); }); };
+    });
+}; 每日一言();
