@@ -696,7 +696,6 @@ ui.更新日志按钮.on("click", () => {
     });
 });
 
-
 ui.检查更新按钮.on("click", () => {
     threads.start(function () {
         let url = [
