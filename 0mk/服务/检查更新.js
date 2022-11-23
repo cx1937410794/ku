@@ -1,3 +1,4 @@
+// 启动检测
 importClass(java.net.HttpURLConnection);
 importClass(java.net.URL);
 importClass(java.io.File);
