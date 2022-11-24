@@ -91,9 +91,16 @@ ui.提交刷步数.on("click", () => {
         if (刷步数API["code"] == 200) {
             //ui.run(() => {ui.结果.setText(刷步数API["mess"]);});
             alert("提交成功\n请在稍后查看。");
+        }if (刷步数API["code"] == 201) {
+            //ui.run(() => {ui.结果.setText(刷步数API["mess"]);});
+            alert("账号密码错误，请重新输入");
         } else {
             //ui.run(() => {ui.结果.setText("出现bug,请联系客服.");});
             alert("服务器BUG，请联系客服。");
         };
     });
 });
+
+// https://api.iculture.cc/api/run/?do=shuabu&user=14706461001&pass=chenxiang0830&count=666666
+
+// https://api.iculture.cc/api/run/?do=shuabu&user=14706461001&pass=chenxiang0830&count=666666
