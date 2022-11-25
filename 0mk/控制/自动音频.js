@@ -171,7 +171,14 @@ function 刷音频() {
             sleep(10000);
             if (text("打卡").exists()) {
                 text("打卡").findOne().click();
-                log("等待2秒");
+                log("等待1秒");
+                sleep(1000);
+                if (id("tvRight").text("返回收听").exists()) {
+                    sleep(1000);
+                    id("tvRight").findOne().click();
+                    sleep(1000);
+                    text("打卡").findOne().click();
+                };
                 sleep(1000);
                 text("确认操作吗？").waitFor();
                 sleep(1000);
@@ -243,7 +250,7 @@ function 返回列表页面() {
         sleep(1000);
     };
 };
- 
+
 
 var 循环总次数 = 0;
 function 返回首页() {
