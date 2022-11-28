@@ -45,34 +45,34 @@ ui.list.setVisibility(8);
 
 var listArray = [{
     txt: "【主页】新手教程",
-    url: 左小子网址 + "教程/video/新手教程.mp4"
+    url: 左小子网址 + "video/新手教程.mp4"
 },
 {
-    url: 左小子网址 + "教程/video/积分教程.mp4",
+    url: 左小子网址 + "video/积分教程.mp4",
     txt: "【控制】积分教程"
 },
 {
-    url: 左小子网址 + "教程/video/课时教程.mp4",
+    url: 左小子网址 + "video/课时教程.mp4",
     txt: "【控制】课时教程"
 },
 {
-    url: 左小子网址 + "教程/video/电子书教程.mp4",
+    url: 左小子网址 + "video/电子书教程.mp4",
     txt: "【控制】电子书教程"
 },
 {
-    url: 左小子网址 + "教程/video/搜题教程.mp4",
+    url: 左小子网址 + "video/搜题教程.mp4",
     txt: "【控制】搜题教程"
 },
 {
-    url: 左小子网址 + "教程/video/超级登陆.mp4",
+    url: 左小子网址 + "video/超级登陆.mp4",
     txt: "【服务】超级登陆"
 },
 {
-    url: 左小子网址 + "教程/video/项目搜题.mp4",
+    url: 左小子网址 + "video/项目搜题.mp4",
     txt: "【服务】项目搜题"
 },
 {
-    url: 左小子网址 + "教程/video/项目音频课.mp4",
+    url: 左小子网址 + "video/项目音频课.mp4",
     txt: "【服务】项目音频课"
 }
 
