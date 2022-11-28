@@ -105,15 +105,11 @@ ui.layout(
                                 <button id="还原数据" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="⬆️ 还原数据(root)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
-                                <button id="购买密钥按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🎯 购买密钥" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="使用教程按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="▶️ 使用教程" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            </horizontal>
-                            <horizontal gravity="center">
                                 <button id="下载网盘按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📍 下载网盘" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                                <button id="更新日志按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📝 更新日志" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
-                                <button id="意见反馈按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🏔️ 意见反馈" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                <button id="更新日志按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📝 更新日志" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="检查更新按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🍬 检查更新" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity='center_vertical'>
@@ -653,17 +649,17 @@ ui.使用教程按钮.on("click", () => {
         });
     } else { alert("❌请先在主页登陆"); return false; };
 });
-ui.购买密钥按钮.on("click", () => {
-    if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-        threads.start(function () {
-            if (getPackageName("支付宝")) {
-                app.startActivity({ data: "alipays://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/fkx19294kmirsbukw0bux2b?_s=web-other" })
-            } else {
-                alert("请先安装支付宝APP")
-            };
-        });
-    } else { alert("❌请先在主页登陆"); return false; };
-});
+// ui.购买密钥按钮.on("click", () => {
+//     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
+//         threads.start(function () {
+//             if (getPackageName("支付宝")) {
+//                 app.startActivity({ data: "alipays://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/fkx19294kmirsbukw0bux2b?_s=web-other" })
+//             } else {
+//                 alert("请先安装支付宝APP")
+//             };
+//         });
+//     } else { alert("❌请先在主页登陆"); return false; };
+// });
 ui.下载网盘按钮.on("click", () => {
     threads.start(function () {
         app.openUrl("http://zuoxiaozi.lanzoui.com/b03n9vqle")
@@ -730,23 +726,23 @@ ui.检查更新按钮.on("click", () => {
     //     engines.execScript("UI", UI);
     // });
 });
-ui.意见反馈按钮.on("click", () => {
-    if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-        threads.start(function () {
-            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/问题反馈.js", {
-                headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' }
-            });
-            if (result.statusCode == 200) {
-                var res = result.body.string();
-                脚本引擎 = engines.execScript("左小子助手教程", res); //加载网络脚本
+// ui.意见反馈按钮.on("click", () => {
+//     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
+//         threads.start(function () {
+//             let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/问题反馈.js", {
+//                 headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' }
+//             });
+//             if (result.statusCode == 200) {
+//                 var res = result.body.string();
+//                 脚本引擎 = engines.execScript("左小子助手教程", res); //加载网络脚本
 
-            } else {
-                alert("❌请求错误,请联系管理员"); //出现错误时报错
-                exit();
-            };
-        });
-    } else { alert("❌请先在主页登陆"); return false; };
-});
+//             } else {
+//                 alert("❌请求错误,请联系管理员"); //出现错误时报错
+//                 exit();
+//             };
+//         });
+//     } else { alert("❌请先在主页登陆"); return false; };
+// });
 ui.设置按钮.on("click", () => {
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
