@@ -62,7 +62,6 @@ ui.layout(
                                         <input id='ID输入框' hint='输入某职在线ID' w='*' inputType="number" gravity="center" textColor="red" textStyle="bold"></input>
                                         <input id='密钥输入框' hint='充值时输入密钥' w='*' gravity="center" textColor="red" textStyle="bold"></input>
                                     </vertical>
-
                                     <horizontal gravity="center">
                                         <button id="登录按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="用户登录/充值" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                         <button id="卡密查询按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="密钥查询" h="60" w="100" style="Widget.AppCompat.Button.Colored" />
