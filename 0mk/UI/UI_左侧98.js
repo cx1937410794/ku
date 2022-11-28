@@ -110,7 +110,7 @@ ui.layout(
                                 <button id="检查更新按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🚩 检查更新" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
-                                <button id="步数运动按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🚶运动步数" h="60" w="240" style="Widget.AppCompat.Button.Colored" /> 
+                                <button id="步数运动按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🚶运动步数" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity='center_vertical'>
@@ -118,8 +118,6 @@ ui.layout(
                                 <text text='系统相关' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
                             <button id="设置按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🔧 系统设置" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-
-
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='定时任务' textSize='16sp' textColor='#993e00'></text>
