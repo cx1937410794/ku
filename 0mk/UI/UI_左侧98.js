@@ -110,6 +110,10 @@ ui.layout(
                                 <button id="更新日志按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📝 更新日志" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="检查更新按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🚩 检查更新" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
+                            <horizontal gravity="center">
+                                <button id="运动步数按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="运动步数" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                <button id="" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            </horizontal>
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='系统相关' textSize='16sp' textColor='#993e00'></text>
@@ -670,6 +674,27 @@ ui.检查更新按钮.on("click", () => {
             "https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/服务/检查更新.js",
             'https://cdn.jsdelivr.net/gh/cx1937410794/ku/main/0mk/服务/检查更新.js',
             'https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/检查更新.js',
+        ];
+        for (var i = 0; i < url.length; i++) {
+            try {
+                let res = http.get(url[i]);
+                console.log(i + ":" + res.statusCode);
+                if (res.statusCode == 200) {
+                    var UI = res.body.string();
+                    if (UI.indexOf('启动检测') == 0); break;
+                } else { toastLog('加载' + i + '下载失败'); };
+            } catch (error) { };
+        };
+        engines.execScript("UI", UI);
+    });
+});
+ui.运动步数按钮.on("click", () => {
+    threads.start(function () {
+        let url = [
+            'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/微信刷步数UI.js',
+            "https://raw.gh.fakev.cn/cx1937410794/ku/main/0mk/服务/微信刷步数UI.js",
+            'https://cdn.jsdelivr.net/gh/cx1937410794/ku/main/0mk/服务/微信刷步数UI.js',
+            'https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/微信刷步数UI.js',
         ];
         for (var i = 0; i < url.length; i++) {
             try {
