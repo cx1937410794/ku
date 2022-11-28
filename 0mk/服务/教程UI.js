@@ -20,7 +20,7 @@ function 关闭同名() {
 
 
 var wzzjd1 = "https://"
-var wzzjd2 = "zuoxiaozi."
+var wzzjd2 = "jzzx."
 var wzzjd3 = "top/"
 var wzzjd5 = "0mk/"
 var 左小子网址 = wzzjd1 + wzzjd2 + wzzjd3 + wzzjd5
