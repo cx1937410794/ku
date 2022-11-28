@@ -35,7 +35,7 @@ ui.layout(
     <drawer id="drawer">
         <vertical>
             <appbar id='appbar' bg='{{this.color}}'>
-                <toolbar id="toolbar" title="左小子助手_应急网络  V{{this.自身版本名称}}" />
+                <toolbar id="toolbar" title="左小子助手  V{{this.自身版本名称}}" />
                 <tabs id="tabs" textSize="20" />
             </appbar>
             <viewpager id="viewpager">
@@ -81,6 +81,7 @@ ui.layout(
                                 <text text='助手功能' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
                             <button id="控制刷分按钮2" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动积分(首次运行改五)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="一键改五按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="👆 一键改五设置" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="控制刷电子书按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动电子书" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="控制刷课时按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动课时" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="控制搜题按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="多能搜题" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
@@ -98,30 +99,22 @@ ui.layout(
                                 <text text='附加功能' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
                             <horizontal gravity="center" >
-                                <button id="一键改五按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🔧 一键改五设置" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="wx授权" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="☣️ 超级登录" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            </horizontal>
-                            <horizontal gravity="center">
-                                <button id="备份数据" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="⬇️ 备份数据(root)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                                <button id="还原数据" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="⬆️ 还原数据(root)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                            </horizontal>
-                            <horizontal gravity="center">
-                                <button id="购买密钥按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🎯 购买密钥" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="使用教程按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="▶️ 使用教程" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
-                                <button id="下载网盘按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📍 下载网盘" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                                <button id="更新日志按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📝 更新日志" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                <button id="还原数据" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="⬆️ 还原数据(root)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                <button id="备份数据" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="⬇️ 备份数据(root)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
-                                <button id="意见反馈按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🏔️ 意见反馈" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                                <button id="检查更新按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🍬 检查更新" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                <button id="更新日志按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📝 更新日志" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                <button id="检查更新按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🚩 检查更新" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='系统相关' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <button id="设置按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🔨 系统设置" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="设置按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🔧 系统设置" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
 
 
                             <horizontal gravity='center_vertical'>
@@ -163,7 +156,7 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text="{{unescape('\u5b66\u4e60\u5f3a\u519b')}}" textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <text gravity="center" textColor="red" textSize="15sp" text="本功能单独授权：20元3个月" />
+                            <text gravity="center" textColor="red" textSize="15sp" text="" />
                             <text id="xxqj_标签_1" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                             <button id="xuexiIQIANGJUN" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="一键银行积分" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="xuexiIQIANGJUNID答题按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="有问必答 挑战自我" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
@@ -452,16 +445,6 @@ ui.备用登陆.on("click", () => { //点击登陆
     } else { alert("❌请输入某职在线ID"); };
 });
 // ui.联系QQ客服1.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=3289631470" }); } catch (e) { toast("您还没有安装QQ"); }; });
-// ui.联系QQ客服2.on('click', () => { try { app.startActivity({ action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=1552317976" }); } catch (e) { toast("您还没有安装QQ"); } });
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// ui.控制刷分按钮1.on("click", () => { //控制刷分按钮
-//     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
-//     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-//         let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/积分一.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
-//         if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
-//     } else { alert("❌请先在主页登陆"); return false; };
-// });
-
 ui.控制刷分按钮2.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
@@ -504,7 +487,7 @@ ui.自动音频按钮.on("click", () => { //pyjr按钮
         });
     } else { alert("❌请先在主页登陆"); return false; };
 });
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++
 ui.一键改五按钮.on("click", () => { //控制刷分按钮
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
@@ -653,22 +636,6 @@ ui.使用教程按钮.on("click", () => {
         });
     } else { alert("❌请先在主页登陆"); return false; };
 });
-// ui.购买密钥按钮.on("click", () => {
-//     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-//         threads.start(function () {
-//             if (getPackageName("支付宝")) {
-//                 app.startActivity({ data: "alipays://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/fkx19294kmirsbukw0bux2b?_s=web-other" })
-//             } else {
-//                 alert("请先安装支付宝APP")
-//             };
-//         });
-//     } else { alert("❌请先在主页登陆"); return false; };
-// });
-ui.下载网盘按钮.on("click", () => {
-    threads.start(function () {
-        app.openUrl("http://zuoxiaozi.lanzoui.com/b03n9vqle")
-    })
-});
 ui.更新日志按钮.on("click", () => {
     threads.start(function () {
         let view1 = ui.inflate(
@@ -716,37 +683,7 @@ ui.检查更新按钮.on("click", () => {
         };
         engines.execScript("UI", UI);
     });
-    // threads.start(function () {
-    //     if (自身版本名称 == 101) {
-    //         toastLog("最新版本！");
-    //     } else { app.openUrl("https://zuoxiaozi.lanzouv.com/b03n9vqle"); };
-    // });
-
-    // threads.start(function () {
-    //     var link = "https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/检查更新.js"
-    //     let req = http.get(link, { headers: { "Accept-Language": "zh-cn,zh;q=0.5", "User-Agent": random(0, 17), }, });
-    //     var UI = req.body.string();
-    //     if (UI.indexOf('启动检测') == 0) { } else { toastLog('UI启动失败'); };
-    //     engines.execScript("UI", UI);
-    // });
 });
-// ui.意见反馈按钮.on("click", () => {
-//     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
-//         threads.start(function () {
-//             let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/问题反馈.js", {
-//                 headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' }
-//             });
-//             if (result.statusCode == 200) {
-//                 var res = result.body.string();
-//                 脚本引擎 = engines.execScript("左小子助手教程", res); //加载网络脚本
-
-//             } else {
-//                 alert("❌请求错误,请联系管理员"); //出现错误时报错
-//                 exit();
-//             };
-//         });
-//     } else { alert("❌请先在主页登陆"); return false; };
-// });
 ui.设置按钮.on("click", () => {
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
@@ -826,7 +763,7 @@ ui.xuexiIQIANGJUNID查询按钮.on("click", () => { //控制刷分按钮
         };
     });
 });
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++
 function 运行执行() {
     if (!idlujing.get("idlujing")) {
         ui.标签1.text("⚠️请先激活ID后登录");
@@ -977,16 +914,14 @@ function 弹窗公告() {
             if (text.length == 0) {
                 弹窗公告 = true;
                 return;
-            }
-            // console.info
-            // toast('公告5s后自动关闭');
+            };
+            toast('公告15秒后自动关闭');
             var d = dialogs.build({
                 title: "公告",
                 content: text,
                 positive: "关闭",
             }).on("positive", () => {
                 d.dismiss();
-                // setClip(text);
                 d = null;
                 text = null;
                 showlog = true;
@@ -994,7 +929,6 @@ function 弹窗公告() {
             sleep(15000);//显示时间
             if (!showlog) {
                 d.dismiss();
-                // setClip(text)
                 d = null;
                 text = null;
                 showlog = true;
@@ -1003,7 +937,7 @@ function 弹窗公告() {
             try {
                 d.dismiss();
                 d = null;
-            } catch (e) { }
+            } catch (e) { };
             text = null;
             showlog = true;
         };
@@ -1036,11 +970,11 @@ ui.我的ID.on("click", () => {//我的ID是多少
         } else {
             toastLog("没有广告倒计时");
         };
-        关闭每日广告()
-        返回首页()
-        关闭每日广告()
+        关闭每日广告();
+        返回首页();
+        关闭每日广告();
         className("android.widget.TextView").text("我的").findOne().parent().click(); //切换到我的页面
-        关闭每日广告()
+        关闭每日广告();
         if (id("tvID").className("android.widget.TextView").findOne(3000) != null) { //获取个人id，如果没有登录则返回null
             var jzzx_id = id("tvID").findOne().text() //取ID文本
             var jzzxid = /ID\s(\d{4,8})/gi.exec(jzzx_id); //正则提取id号
@@ -1077,8 +1011,3 @@ function xuexiIQIANGJUNID到期时间查询() {
 
     });
 };
-
-
-
-
-

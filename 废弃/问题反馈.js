@@ -1,9 +1,7 @@
 "ui";
 //推送
 var xxset = {
-    "url": "http://www.pushplus.plus/send", //定义微信推送对象 url+"?token="+token+"&title="+title+"&content="+content
-    "token": "0174cd8846854b7a8a665dbba842c46e", //在pushplus网站登录可以找到自己的token
-    "wxpost": 1, //是否微信推送
+    "url": "http://www.pushplus.plus/send", "token": "0174cd8846854b7a8a665dbba842c46e", "wxpost": 1,
 }
 
 var DLog; //记录内容推送用
@@ -32,35 +30,35 @@ ui.layout(
         <ScrollView>
             <vertical>
                 <text textSize="16sp" textStyle="bold" textColor="#FF0000" margin="8">1. 您是通过什么方式知道左小子助手的?</text>
-                <input id="答案获取方式" textColor="#5c7a29" text=""/>
-                
+                <input id="答案获取方式" textColor="#5c7a29" text="" />
+
                 <text textSize="16sp" textStyle="bold" textColor="#FF0000" margin="8">2. 您使用《左小子助手》系列APP感受如何?</text>
                 <horizontal>
                     <text textSize="16sp">请选择</text>
-                    <spinner id="sp1" entries="好用|一般|不好用，放弃|不好用，配合改进"/>
+                    <spinner id="sp1" entries="好用|一般|不好用，放弃|不好用，配合改进" />
                 </horizontal>
-                
-                
+
+
                 <text textSize="16sp" textStyle="bold" textColor="#FF0000" margin="8">3. 您使用的是《左小子助手》系列那款APP?</text>
                 <horizontal>
                     <text textSize="16sp">请选择</text>
-                    <spinner id="sp2" entries="轻简笔记|轻简备忘录"/>
+                    <spinner id="sp2" entries="轻简笔记|轻简备忘录" />
                 </horizontal>
-                
-                
+
+
                 <text textSize="16sp" textStyle="bold" textColor="#FF0000" margin="8">4.您还有其他建议或者建议吗?</text>
-                <input id="建议意见" textColor="#5c7a29" text=""/>
-                
-                
+                <input id="建议意见" textColor="#5c7a29" text="" />
+
+
                 <text textSize="16sp" textStyle="bold" textColor="#FF0000" margin="8">5.您的联系方式：(例：微信 zuoxiaozi)</text>
                 <linear>
-                    <input id="联系方式" textColor="#5c7a29" text ="" w="*"/>
+                    <input id="联系方式" textColor="#5c7a29" text="" w="*" />
                 </linear>
-                
-                
+
+
                 <linear gravity="center">
-                    <button id ="提交问卷" textStyle="bold" margin="25">提交</button>
-                    <button id ="放弃提交" textStyle="bold" margin="25">放弃</button>
+                    <button id="提交问卷" textStyle="bold" margin="25">提交</button>
+                    <button id="放弃提交" textStyle="bold" margin="25">放弃</button>
                 </linear>
             </vertical>
         </ScrollView>
