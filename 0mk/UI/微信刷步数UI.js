@@ -7,7 +7,7 @@ function 每日一言() {
             // ui.run(() => { ui.yiyan.setText(result.body.json().anwei); });
 
 
-            alert("一句话才是最好的鼓励!加油!\n\n" + result.body.json().anwei)
+            alert("一句话才是最好的鼓励\n\n" + result.body.json().anwei)
         };
     });
 };
