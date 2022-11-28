@@ -122,7 +122,6 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='定时任务' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-
                             <vertical margin="10" bg="#DCDCDC" w="*" h="auto">
                                 <radiogroup padding="20 20 20 20">
                                     <horizontal>
@@ -644,7 +643,7 @@ ui.更新日志按钮.on("click", () => {
         );
         var dialog1 = dialogs.build({
             customView: view1,
-            title: "加载中...",
+            title: "加载完成,正在展开...",
             cancelable: true
         }).on("cancel", (dialog) => {
             exit()
@@ -657,7 +656,7 @@ ui.更新日志按钮.on("click", () => {
             alert("网络错误，请联系管理员")
             exit();
         }
-        sleep(500)
+        sleep(500);
         dialog1.dismiss();
         alert("更新日志", geturl.body.string());
 
@@ -793,7 +792,6 @@ function 运行执行() {
         ui.ID输入框.text(idlujing.get("idlujing"));
         ui.登录按钮.click();
     };
-    // ui.检查更新按钮.click();
     xuexiIQIANGJUNID到期时间查询();
 
     if (!$power_manager.isIgnoringBatteryOptimizations()) {
