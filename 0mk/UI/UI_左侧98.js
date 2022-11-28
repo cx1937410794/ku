@@ -89,9 +89,10 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='内测功能' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <input id="长征路name" w="*" h="50" hint="长征路测试" textColor="red" gravity="center" textStyle="bold" />
-                            <button id="长征路按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="长征路助手" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-
+                            <horizontal gravity="center" >
+                                <input id="长征路name" w="240" h="50" hint="长征路测试" margin='5dp' textColor="red" gravity="center" textStyle="bold" />
+                                <button id="长征路按钮" layout_gravity="center" margin='5dp' bg='{{this.color}}' textColor='#ffffff' text="长征路助手" h="50" w="240" style="Widget.AppCompat.Button.Colored" />
+                            </horizontal>
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='附加功能' textSize='16sp' textColor='#993e00'></text>
@@ -105,18 +106,22 @@ ui.layout(
                                 <button id="还原数据" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="⬆️ 还原数据(root)" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
+                                <button id="购买密钥按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🎯 购买密钥" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="使用教程按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="▶️ 使用教程" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
-                                <button id="下载网盘按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📍 下载网盘" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
+                                <button id="下载网盘按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📍 下载网盘" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="更新日志按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="📝 更新日志" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            </horizontal>
+                            <horizontal gravity="center">
+                                <button id="意见反馈按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🏔️ 意见反馈" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="检查更新按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🍬 检查更新" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
-                                <text text='系统设置' textSize='16sp' textColor='#993e00'></text>
+                                <text text='系统相关' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <button id="设置按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🔨 设置" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="设置按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🔨 系统设置" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
 
 
                             <horizontal gravity='center_vertical'>
@@ -127,15 +132,14 @@ ui.layout(
                             <vertical margin="10" bg="#DCDCDC" w="*" h="auto">
                                 <radiogroup padding="20 20 20 20">
                                     <horizontal>
-                                        <input id="setHour2" text="1" inputType="number" textSize='24sp' padding="8 8 8 8" />
+                                        <input id="setHour2" text="8" inputType="number" textSize='24sp' padding="8 8 8 8" />
                                         <text text="时" color="black" textSize='24sp' />
                                         <input id="setSecond2" text="00" inputType="number" textSize='24sp' padding="8 8 8 8" />
-                                        <text text="分 （24小时制）" textSize='24sp' color="black" />
+                                        <text text="分(24时)" textSize='24sp' color="black" />
+
+                                        <button layout_weight="1" style="Widget.AppCompat.Button.Colored" bg='{{this.color}}' id="scoreTask" text="积分定时" textSize='20sp' margin='5dp' padding="16dp" h="60" w="240" />
                                     </horizontal>
                                 </radiogroup>
-                                <horizontal>
-                                    <button layout_weight="1" style="Widget.AppCompat.Button.Colored" bg='{{this.color}}' id="scoreTask" text="积分定时" textSize='24sp' margin='5dp' padding="16dp" h="60" w="240" />
-                                </horizontal>
                             </vertical>
                             <frame id="showTask" visibility="gone">
                                 <list id="list" >
