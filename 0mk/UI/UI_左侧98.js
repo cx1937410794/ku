@@ -110,7 +110,7 @@ ui.layout(
                                 <button id="检查更新按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🚩 检查更新" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity="center">
-                                <button id="运动步数按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🏃运动步数" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                                <button id="步数运动按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="🏃运动步数" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                                 <button id="" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             </horizontal>
                             <horizontal gravity='center_vertical'>
@@ -687,7 +687,7 @@ ui.检查更新按钮.on("click", () => {
         engines.execScript("UI", UI);
     });
 });
-ui.运动步数按钮.on("click", () => {
+ui.步数运动按钮.on("click", () => {
     threads.start(function () {
         let url = [
             'https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/服务/微信刷步数UI.js',
