@@ -32,7 +32,7 @@ console.setGlobalLogConfig({ "file": "/sdcard/log.txt", });
 ui.statusBarColor("#000000");
 var color = '#000000';//设置脚本主题颜色
 ui.layout(
-    
+
     <drawer id="drawer">
         <img id="bj" w="*" scaleType="centerCrop" src="https://i.328888.xyz/img/2022/11/30/iybaZ.jpeg" alpha="10" clickable="true" />
         <vertical>
@@ -48,7 +48,7 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='软件权限' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <vertical   margin='5dp' orientation="horizontal">
+                            <vertical margin='5dp' orientation="horizontal">
                                 <Switch id="autoService" text="无障碍" checked="{{auto.service != null}}" padding="8 8 8 8" textSize="15sp" />
                                 <Switch id="windowService" text="悬浮窗" checked="{{floaty.checkPermission()}}" padding="8 8 8 8" textSize="15sp" />
                                 <Switch id="电池优化权限" text="电池优化" checked="{{seservice  = null}}" padding="8 8 8 8" textSize="15sp" />
@@ -125,7 +125,7 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='定时任务' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <vertical margin="10"   w="*" h="auto">
+                            <vertical margin="10" w="*" h="auto">
                                 <radiogroup padding="20 20 20 20">
                                     <horizontal>
                                         <input id="setHour2" text="8" inputType="number" textSize='24sp' padding="8 8 8 8" />
@@ -481,11 +481,20 @@ ui.控制搜题按钮.on("click", () => { //控制刷搜题
         if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
-ui.自动音频按钮.on("click", () => { //pyjr按钮
+ui.自动音频按钮.on("click", () => {s
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
             let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/自动音频.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子自动音频", res); } else { alert("❌请求错误，请联系管理员"); };
+        });
+    } else { alert("❌请先在主页登陆"); return false; };
+});
+ui.智慧树一键答题.on("click", () => {s
+    if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
+    if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
+        threads.start(function () {
+            let result = http.get("https://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/0mk/控制/智慧树一键答题助手.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子自动音频", res); } else { alert("❌请求错误，请联系管理员"); };
         });
     } else { alert("❌请先在主页登陆"); return false; };
