@@ -32,7 +32,9 @@ console.setGlobalLogConfig({ "file": "/sdcard/log.txt", });
 ui.statusBarColor("#000000");
 var color = '#000000';//设置脚本主题颜色
 ui.layout(
+    
     <drawer id="drawer">
+        <img id="bj" w="*" scaleType="centerCrop" src="https://i.328888.xyz/img/2022/11/30/iybaZ.jpeg" alpha="10" clickable="true" />
         <vertical>
             <appbar id='appbar' bg='{{this.color}}'>
                 <toolbar id="toolbar" title="左小子助手  V{{this.自身版本名称}}" />
@@ -46,7 +48,7 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='软件权限' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <vertical bg='#ffffff' margin='5dp' orientation="horizontal">
+                            <vertical   margin='5dp' orientation="horizontal">
                                 <Switch id="autoService" text="无障碍" checked="{{auto.service != null}}" padding="8 8 8 8" textSize="15sp" />
                                 <Switch id="windowService" text="悬浮窗" checked="{{floaty.checkPermission()}}" padding="8 8 8 8" textSize="15sp" />
                                 <Switch id="电池优化权限" text="电池优化" checked="{{seservice  = null}}" padding="8 8 8 8" textSize="15sp" />
@@ -56,7 +58,7 @@ ui.layout(
                                 <text text='账号配置' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
                             <ScrollView>
-                                <vertical margin='5dp' bg='#ffffff'>
+                                <vertical margin='5dp'  >
                                     <vertical>
                                         <text id="标签1" marginTop="0" text="" gravity="center" textColor="MAGENTA" textSize="15" />
                                         <input id='ID输入框' hint='输入某职在线ID' w='*' inputType="number" gravity="center" textColor="red" textStyle="bold"></input>
@@ -122,7 +124,7 @@ ui.layout(
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='定时任务' textSize='16sp' textColor='#993e00'></text>
                             </horizontal>
-                            <vertical margin="10" bg="#DCDCDC" w="*" h="auto">
+                            <vertical margin="10"   w="*" h="auto">
                                 <radiogroup padding="20 20 20 20">
                                     <horizontal>
                                         <input id="setHour2" text="8" inputType="number" textSize='24sp' padding="8 8 8 8" />
@@ -130,7 +132,7 @@ ui.layout(
                                         <input id="setSecond2" text="00" inputType="number" textSize='24sp' padding="8 8 8 8" />
                                         <text text="分(24时)" textSize='24sp' color="black" />
 
-                                        <button layout_weight="1" style="Widget.AppCompat.Button.Colored" bg='{{this.color}}' id="scoreTask" text="积分定时" textSize='20sp' margin='5dp' padding="16dp" h="60" w="240" />
+                                        <button layout_weight="1" style="Widget.AppCompat.Button.Colored" bg='{{this.color}}' id="scoreTask" text="积分定时" textSize='16sp' margin='5dp' padding="16dp" h="50" w="240" />
                                     </horizontal>
                                 </radiogroup>
                             </vertical>
