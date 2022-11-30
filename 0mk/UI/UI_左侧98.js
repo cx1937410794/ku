@@ -87,6 +87,7 @@ ui.layout(
                             <button id="控制刷课时按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="自动课时" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="控制搜题按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="多能搜题" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <button id="自动音频按钮" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="学习项目★自动音频" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
+                            <button id="智慧树一键答题" bg='{{this.color}}' margin='5dp' textColor='#ffffff' layout_gravity="center" text="智慧树★一键答题" h="60" w="240" style="Widget.AppCompat.Button.Colored" />
                             <horizontal gravity='center_vertical'>
                                 <text text='' margin='5dp' bg='{{this.color}}' w='8dp' h='35dp'></text>
                                 <text text='内测功能' textSize='16sp' textColor='#993e00'></text>
