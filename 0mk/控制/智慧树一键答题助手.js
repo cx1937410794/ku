@@ -388,7 +388,7 @@ function checkid() { //检查id函数
             let 结果i = 到期时间() - (网络时间())
             if (结果i > 0) {
                 toastLog("到期时间:" + 服务器一到期时间)
-                alert("验证成功    支持课程:\n军事理论综合版\noffice高校办公\n演讲与口才");
+                alert("验证成功    支持课程:\n军事理论综合版\noffice高校办公\n演讲与口才\n走进航空航天");
                 功能权限 = true;
 
             } else if (0 > 结果i) {
