@@ -101,7 +101,8 @@ window.功能_自动爬题.click(() => {
     if (功能权限 == true) {
         功能_自动答题线程引擎 = threads.start(function () {
             toastLog(" 开启运行");
-            自动功能_爬题();
+            // 自动功能_爬题();
+            alert("管理员开放");
             setInterval(() => { }, 1000)
         });
     } else {
