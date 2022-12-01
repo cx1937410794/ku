@@ -481,7 +481,7 @@ ui.控制搜题按钮.on("click", () => { //控制刷搜题
         if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("左小子助手", res); } else { alert("❌请求错误，请联系管理员"); };
     } else { alert("❌请先在主页登陆"); return false; };
 });
-ui.自动音频按钮.on("click", () => {s
+ui.自动音频按钮.on("click", () => {
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
