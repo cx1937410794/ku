@@ -15,7 +15,7 @@ var 自身版本名称 = packageInfo.versionName;
 var 全局_登录码 = "";
 var 全局_登录状态 = "";
 let 淘宝时间链接 = http.get("http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp");
-
+var 头像 = "https://s3.bmp.ovh/imgs/2021/12/612c65afc9decaaf.png"
 //————————————————————————————————————————————————————————————————————————————————设置电子书部分
 var 电子书翻页总时间 = idlujing.get("电子书翻页总时间");//读
 if (电子书翻页总时间 == undefined) { idlujing.put("电子书翻页总时间", "10080"); };
@@ -37,7 +37,12 @@ ui.layout(
         <img id="bj" w="*" scaleType="centerCrop" src="https://i.328888.xyz/img/2022/11/30/iybaZ.jpeg" alpha="10" clickable="true" />
         <vertical>
             <appbar id='appbar' bg='{{this.color}}'>
-                <toolbar id="toolbar" title="左小子助手  V{{this.自身版本名称}}" />
+                <horizontal gravity='center_vertical'>
+                    <vertical >
+                        <img id="留言按钮" src="{{头像}}" w="40" h="40" circle="true" />
+                    </vertical>
+                    <toolbar id="toolbar" title="左小子助手  V{{this.自身版本名称}}" />
+                </horizontal>
                 <tabs id="tabs" textSize="20" />
             </appbar>
             <viewpager id="viewpager">
@@ -1043,3 +1048,8 @@ function xuexiIQIANGJUNID到期时间查询() {
 
     });
 };
+
+
+ui.留言按钮.click(function () {
+    alert("你好,我是你们的后端维护员,我曾经像你们一样是一个普普通通的战士,我跟大家一样冲锋在疫情一线,2019.12.24除夕傍晚16点左右,我后送一名来自武汉转车的同事,兢兢业业与大家并肩作战直到疫情缓和,在次年的一次工作组检查时候,我没及时给领导开门被断定存在隐患,之后被挂职一个月,并调离工作岗位;我不服但又无奈,最终我选择远离,来证明对我的不公,后来想想,在领导面前再多的解释也是多余...\n最后,希望大家当上领导了,能倾听一下底下人的声音!")
+});
