@@ -150,7 +150,7 @@ function 自动功能_答题() {
             className("android.view.View").desc("我知道了").waitFor();
             className("android.view.View").desc("我知道了").findOne().parent().click();
 
-            className("android.view.View").text("提交作业").waitFor() || className("android.view.View").text("提交考试").waitFor();
+            className("android.view.View").text("提交作业").waitFor();
             className("android.view.View").text("提交作业").findOne().click();
 
             id("tishi").text("你已全部完成本次作业/考试，确认要交卷吗？").waitFor();
@@ -209,7 +209,7 @@ function 答题一次() {
         } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
     };
     return true;
-}; 
+};
 // *********************
 // 自动爬题
 // *********************
