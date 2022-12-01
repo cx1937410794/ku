@@ -101,8 +101,8 @@ window.功能_自动爬题.click(() => {
     if (功能权限 == true) {
         功能_自动答题线程引擎 = threads.start(function () {
             toastLog(" 开启运行");
+            alert("管理员权限开放");
             // 自动功能_爬题();
-            alert("管理员开放");
             setInterval(() => { }, 1000)
         });
     } else {
@@ -139,91 +139,68 @@ window.功能停止运行.click(() => {//关闭功能
 // *********************
 // 自动答题
 // *********************
+
 function 自动功能_答题() {
-    threads.start(function () {
-        while (true) {
-            答题一次();
-            sleep("500");
-            className("android.view.View").text("下一题").findOne(500).click();
-            sleep("100");
-            if (id("tishi2").text("此为最后一题").exists()) {
-                className("android.view.View").desc("我知道了").waitFor();
-                className("android.view.View").desc("我知道了").findOne().parent().click();
+    while (true) {
+        答题一次();
+        sleep("500");
+        className("android.view.View").text("下一题").findOne(500).click();
+        sleep("100");
+        if (id("tishi2").text("此为最后一题").exists()) {
+            className("android.view.View").desc("我知道了").waitFor();
+            className("android.view.View").desc("我知道了").findOne().parent().click();
 
-                className("android.view.View").text("提交作业").waitFor();
-                className("android.view.View").text("提交作业").findOne().click();
+            className("android.view.View").text("提交作业").waitFor();
+            className("android.view.View").text("提交作业").findOne().click();
 
-                id("tishi").text("你已全部完成本次作业/考试，确认要交卷吗？").waitFor();
-                className("android.view.View").desc("确定").findOne().click();
-                break;
-            };
+            id("tishi").text("你已全部完成本次作业/考试，确认要交卷吗？").waitFor();
+            className("android.view.View").desc("确定").findOne().click();
+            break;
         };
-    });
+    };
 };
+
+
 function 答题一次() {
     // 判断题型
     var 题库http = "https://jzzx.top/0mk/0tiku/tiku_json_20221129.json";
-    if (textContains(".单选题").exists()) {    /******************单选题*******************/
-        let 题目_完整题目 = className("android.view.View").id("app").findOne().child(2).text();// 这里匹配出全部挖空
-        let res = http.get(题库http, { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
-        let json = res.body.json();
+    let 题目_完整题目 = className("android.view.View").id("app").findOne().child(2).text();// 这里匹配出全部挖空
+    let res = http.get(题库http, { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+    let json = res.body.json();
+    // log(json[题目_完整题目])//取数组内容
+    // log(json[题目_完整题目].length) //取数量
+    log("调试模式:★" + json[题目_完整题目][0])//取数组内容   
+    if (textContains(".单选题").exists()) {
         if (json[题目_完整题目]) {
+            if (textContains(json[题目_完整题目][0])) {
+                textContains(json[题目_完整题目][0]).click();
+            } else {
+                log("请手动点击答案:" + json[题目_完整题目][0])
+            };
+        } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
 
-            // log(json[题目_完整题目])//取数组内容
-            // log(json[题目_完整题目].length) //取数量
-            // log(json[题目_完整题目][0])//取数组内容 
-            toast(json[题目_完整题目][0]);
+
+    } else if (textContains(".判断题").exists()) {
+        if (json[题目_完整题目]) {
             text(json[题目_完整题目][0]).click();
-            // while (!click(json[题目_完整题目][0]));
-            // if (json[题目_完整题目]) {
-            //     // for (var i = 0; i <= json[题目_完整题目].length; i++) { log(json[题目_完整题目][i]); click(json[题目_完整题目][i]); };
-            //     log(json[题目_完整题目][0]);
-            // json[题目_完整题目][0].findOne().parent().click();
-            // } else {
-            //     log("没有此题");
-            // };    
-        } else { log("此题无答案:" + 题目_完整题目); };
-    } else if (textContains(".判断题").exists()) {    /******************填空题*******************/
-        let 题目_完整题目 = className("android.view.View").id("app").findOne().child(2).text();// 这里匹配出全部挖空
-        let res = http.get(题库http, { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
-        let json = res.body.json();
+        } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
+
+
+    } else if (textContains(".多选题").exists()) {
         if (json[题目_完整题目]) {
-
-            // log(json[题目_完整题目])//取数组内容
-            // log(json[题目_完整题目].length) //取数量
-            // log(json[题目_完整题目][0])//取数组内容 
-            toast(json[题目_完整题目][0]);
-            text(json[题目_完整题目][0]).click();
-            // json[题目_完整题目][0].findOne().parent().click();
-            // if (json[题目_完整题目]) {
-            //     for (var i = 0; i <= json[题目_完整题目].length; i++) { click(json[题目_完整题目][i]); };
-            // } else {
-            //     log("没有此题");
-            // };
-
-
-        } else { log("此题无答案:" + 题目_完整题目); };
-    } else if (textContains(".多选题").exists()) {    /******************多选题*******************/
-        let 题目_完整题目 = className("android.view.View").id("app").findOne().child(2).text();// 这里匹配出全部挖空
-        let res = http.get(题库http, { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
-        let json = res.body.json();
-        if (json[题目_完整题目]) {
-
-
-            // log(json[题目_完整题目])//取数组内容
-            // log(json[题目_完整题目].length) //取数量
-            // click(json[题目_完整题目][0])//取数组内容 
             if (json[题目_完整题目]) {
                 for (var i = 0; i <= json[题目_完整题目].length; i++) {
-                    toast(json[题目_完整题目][i]);
-                    click(json[题目_完整题目][i]);
+                    if (textContains(json[题目_完整题目][i])) {
+                        textContains(json[题目_完整题目][i]).click();
+                    } else {
+                        log("请手动点击答案:" + json[题目_完整题目][0]);
+                    };
                 };
             } else {
-                log("没有此题:" + 题目_完整题目);
+                log("没有此题:★" + 题目_完整题目 + "★");
             };
-        } else { log("此题无答案:" + 题目_完整题目); };
+        } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
     };
-
     return true;
 };
 // *********************
