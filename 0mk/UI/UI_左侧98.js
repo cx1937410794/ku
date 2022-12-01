@@ -490,7 +490,7 @@ ui.自动音频按钮.on("click", () => {
         });
     } else { alert("❌请先在主页登陆"); return false; };
 });
-ui.智慧树一键答题.on("click", () => {s
+ui.智慧树一键答题.on("click", () => {
     if (auto.service == null) { alert("❌请开启无障碍服务"); return false }//无障碍权限
     if (idlujing.get("idlujing") != "" && 全局_登录状态 == "登录成功") {
         threads.start(function () {
