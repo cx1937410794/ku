@@ -152,14 +152,10 @@ function 签到函数() {
 function 程序_学习室函数() {
     className("android.widget.TextView").text("今日学习").waitFor();
     className("android.widget.TextView").text("今日学习").findOne().parent().click();
-    // log("调试模式:点击今日学习_完成")
     text("已订专栏").waitFor();
-    // log("调试模式:等待专栏出现_完成")
     if (text("已订专栏").findOne(5000) != null) {
         click(text("已订专栏").findOne().bounds().centerX(), text("已订专栏").findOne().bounds().centerY());
-        // log("调试模式:点击专栏_完成")
     };
-    // log("调试模式:退出_完成")
     sleep(1000);
     //查看学习目标数
     var 组件_学习目标全内容 = id("tvSourceDay").className("android.widget.TextView").findOne(50000);
@@ -188,10 +184,7 @@ var 文章_阅读_获取积分失败;
 function 函数_文章阅读(num) {
     for (a = 1; a <= num; a++) {
         if (!文章_阅读_获取积分失败 == true) {
-            sleep(2000);
-            //toast("恭喜我找到了");
-            // text("已订专题").findOne().findOne().parent().parent()
-            //找到第一篇文章，并且找到他的子控件获取他的text
+            sleep(2000); 
             if (id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne(3000) != null) {//列表文章名字是否存在
                 var 组件_文章名字 = id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne().text(); //toastLog(title);
                 if (组件_文章名字 != null) {
@@ -297,9 +290,9 @@ function 继续学习音频课() {
     let 音频阅读数量 = 0;
     // let 音频_音频列表_顶点击范围 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne().bounds().top;//顶
     // let 音频_音频列表_底边 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne().bounds().bottom; //底
-    for (var i = 0; i < 26; i++) {
+    for (var i = 0; i < 30; i++) {
         let 音频_音频列表_顶边 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne(5000).bounds().top;//顶// let 音频_音频列表_底边 = className("androidx.recyclerview.widget.RecyclerView").id("rvAudioList").findOne(5000).bounds().botto; //底
-        swipe(device.width / 2, 音频_音频列表_顶边 + 400, device.width / 2, 音频_音频列表_顶边, 500);//向上滑动
+        swipe(device.width / 2, 音频_音频列表_顶边 + 800, device.width / 2, 音频_音频列表_顶边, 800);//向上滑动
         sleep(1000);
         // if (!className("android.widget.FrameLayout").clickable(true).boundsInside(0, 音频_音频列表_顶点击范围, device.width, 音频_音频列表_底边).findOne(1000).click()) {
         if (!className("android.widget.FrameLayout").clickable(true).findOne(1000).click()) {
