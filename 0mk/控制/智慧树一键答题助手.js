@@ -143,20 +143,22 @@ window.功能停止运行.click(() => {//关闭功能
 function 自动功能_答题() {
     while (true) {
         答题一次();
-        sleep("500");
-        className("android.view.View").text("下一题").findOne(500).click();
+        sleep("1000");
+        text("下一题").findOne(500).click();
         sleep("100");
         if (id("tishi2").text("此为最后一题").exists()) {
             className("android.view.View").desc("我知道了").waitFor();
             className("android.view.View").desc("我知道了").findOne().parent().click();
 
-            className("android.view.View").text("提交作业").waitFor();
+            className("android.view.View").text("提交作业").waitFor() || className("android.view.View").text("提交考试").waitFor();
             className("android.view.View").text("提交作业").findOne().click();
 
             id("tishi").text("你已全部完成本次作业/考试，确认要交卷吗？").waitFor();
             className("android.view.View").desc("确定").findOne().click();
             break;
         };
+
+
     };
 };
 
@@ -168,33 +170,38 @@ function 答题一次() {
     let res = http.get(题库http, { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
     let json = res.body.json();
     // log(json[题目_完整题目])//取数组内容
-    // log(json[题目_完整题目].length) //取数量
-    log("调试模式:★" + json[题目_完整题目][0])//取数组内容   
+    // log(json[题目_完整题目].length) //取数量 
+    log("调试模式:题目★" + 题目_完整题目)
+    log("调试模式:答案★" + json[题目_完整题目][0])//取数组内容  
     if (textContains(".单选题").exists()) {
         if (json[题目_完整题目]) {
             if (textContains(json[题目_完整题目][0])) {
-                textContains(json[题目_完整题目][0]).click();
+                // textContains(json[题目_完整题目][0]).findOne().parent().click()
+                // log(click(textContains(json[题目_完整题目][0]).findOne().bounds().centerX(), textContains(json[题目_完整题目][0]).findOne().bounds().centerY()))
+                if (textContains(json[题目_完整题目][0]).click()) {
+                    log("点击方案A");
+                    textContains(json[题目_完整题目][0]).click();
+                } else {
+                    log("点击方案B");
+                    while (!click(json[题目_完整题目][0]));
+                };
             } else {
                 log("请手动点击答案:" + json[题目_完整题目][0])
             };
-        } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
+        } else {
+            log("此题无答案:★" + 题目_完整题目 + "★");
+        };
 
 
     } else if (textContains(".判断题").exists()) {
         if (json[题目_完整题目]) {
             text(json[题目_完整题目][0]).click();
         } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
-
-
     } else if (textContains(".多选题").exists()) {
         if (json[题目_完整题目]) {
             if (json[题目_完整题目]) {
                 for (var i = 0; i <= json[题目_完整题目].length; i++) {
-                    if (textContains(json[题目_完整题目][i])) {
-                        textContains(json[题目_完整题目][i]).click();
-                    } else {
-                        log("请手动点击答案:" + json[题目_完整题目][0]);
-                    };
+                    textContains(json[题目_完整题目][i]).click();
                 };
             } else {
                 log("没有此题:★" + 题目_完整题目 + "★");
@@ -202,7 +209,7 @@ function 答题一次() {
         } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
     };
     return true;
-};
+}; 
 // *********************
 // 自动爬题
 // *********************
