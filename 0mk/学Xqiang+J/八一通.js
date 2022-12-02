@@ -759,7 +759,7 @@ function 使用权限验证() {
             let thisTime = json[二维码分析结果[0]];
             查到期时间 = thisTime;
             log(查到期时间)
-            if (!thisTime) { 红色弹窗("无使用权限"); alert("请先激活"); setClip(二维码分析结果[0]); exit(); };
+            if (!thisTime) { 红色弹窗("无使用权限"); alert("请先激活"); toastLog("请先激活"); setClip(二维码分析结果[0]); exit(); };
             let thisTime时间 = thisTime.时间
             thisTime时间 = thisTime时间.replace(/-/g, '/');
             let time = new Date(thisTime时间);
