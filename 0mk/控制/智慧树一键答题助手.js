@@ -435,7 +435,7 @@ function checkid() { //检查id函数
                     退出结果 = 退出登录.body.string()
                     toastLog("对接" + 退出结果 + "次")
                     if (退出结果 == "1") { //成功
-                        alert("验证成功\n重点:请在课程详情页面点击功能");
+                        alert("支持课程:\n军事理论综合版\noffice高校办公\n演讲与口才\n走进航空航天\n关爱生命急救与自救技能");
                         功能权限 = true;
                     } else {
                         toastLog("操作失败")
