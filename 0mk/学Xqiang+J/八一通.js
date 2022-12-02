@@ -747,7 +747,6 @@ function 使用权限验证() {
     importClass(java.io.FileOutputStream);
     importClass(java.io.BufferedOutputStream);
 
-
     sleep(100);
     var 二维码分析结果 = /[\u4e00-\u9fa5_a-zA-Z0-9_]{8,11}/gi.exec(解析二维码(imgPath)); //正则
     调试模式完整二维码信息 = 二维码分析结果;
