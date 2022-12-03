@@ -18,16 +18,16 @@ function 关闭同名() {
 日志控制台();
 var idlujing = storages.create("shuju");//配置文件
 
-var 功能_自动答题线程引擎 = null;
-var 功能_自动爬题线程引擎 = null;
+var 功能_课程_自动答题线程引擎 = null;
+var 功能_项目_自动答题线程引擎 = null;
 
 var 功能权限 = false;
 
 let window = floaty.window(
     <vertical>
         <button id="功能窗口移动" textColor="white" text=" 移动窗口 " w="70" h="40" bg="#40000000" textSize="13sp" />
-        <button id="功能_自动答题" textColor="white" text=" 自动答题 " w="70" h="40" bg="#40000000" textSize="13sp" />
-        <button id="功能_自动爬题" textColor="white" text=" 自动爬题 " w="70" h="40" bg="#40000000" textSize="13sp" />
+        <button id="功能_课程_自动答题" textColor="white" text=" 自动课程题 " w="70" h="40" bg="#40000000" textSize="13sp" />
+        <button id="功能_项目_自动答题" textColor="white" text=" 自动项目题 " w="70" h="40" bg="#40000000" textSize="13sp" />
         <button id="功能停止运行" textColor="white" text=" 停止功能 " w="70" h="40" bg="#40000000" textSize="13sp" />
         <button id="功能退出" textColor="white" text=" 退出程序 " w="70" h="40" bg="#40000000" textSize="13sp" />
     </vertical>
@@ -84,11 +84,11 @@ window.功能退出.click(() => {
 });
 
 
-window.功能_自动答题.click(() => {
+window.功能_课程_自动答题.click(() => {
     if (功能权限 == true) {
-        功能_自动爬题线程引擎 = threads.start(function () {
+        功能_项目_自动答题线程引擎 = threads.start(function () {
             toastLog(" 开启运行");
-            自动功能_答题();
+            自动答题_课程();
             setInterval(() => { }, 1000)
         });
     } else {
@@ -97,30 +97,27 @@ window.功能_自动答题.click(() => {
 
 });
 
-window.功能_自动爬题.click(() => {
+window.功能_项目_自动答题.click(() => {
     if (功能权限 == true) {
-        功能_自动答题线程引擎 = threads.start(function () {
+        功能_课程_自动答题线程引擎 = threads.start(function () {
             toastLog(" 开启运行");
-            alert("管理员权限开放");
-            // 自动功能_爬题();
+            自动答题_项目();
             setInterval(() => { }, 1000)
         });
-    } else {
-        alert("请先验证功能");
-    };;
+    } else { alert("请先验证功能"); };;
 });
 
 window.功能停止运行.click(() => {//关闭功能
-    if (功能_自动答题线程引擎 !== null) {
-        if (功能_自动答题线程引擎.isAlive() == true) {
+    if (功能_课程_自动答题线程引擎 !== null) {
+        if (功能_课程_自动答题线程引擎.isAlive() == true) {
             toastLog(" 已关闭 ");
-            功能_自动答题线程引擎.interrupt();
+            功能_课程_自动答题线程引擎.interrupt();
         };
     };
-    if (功能_自动爬题线程引擎 !== null) {
-        if (功能_自动爬题线程引擎.isAlive() == true) {
+    if (功能_项目_自动答题线程引擎 !== null) {
+        if (功能_项目_自动答题线程引擎.isAlive() == true) {
             toastLog(" 已关闭 ");
-            功能_自动爬题线程引擎.interrupt();
+            功能_项目_自动答题线程引擎.interrupt();
         };
     };
 });
@@ -134,17 +131,12 @@ window.功能停止运行.click(() => {//关闭功能
 
 
 
-
-
-// *********************
-// 自动答题
-// *********************
-
-function 自动功能_答题() {
+function 自动答题_课程() {
     while (true) {
-        答题一次();
+        课程_答题一次();
         sleep("1000");
-        text("下一题").findOne(500).click();
+        // text("下一题").findOne(500).click();
+        className("android.view.View").text("下一题").findOne(500).click();
         sleep("100");
         if (id("tishi2").text("此为最后一题").exists()) {
             className("android.view.View").desc("我知道了").waitFor();
@@ -157,13 +149,11 @@ function 自动功能_答题() {
             className("android.view.View").desc("确定").findOne().click();
             break;
         };
-
-
     };
 };
 
 
-function 答题一次() {
+function 课程_答题一次() {
     // 判断题型
     var 题库http = "https://jzzx.top/0mk/0tiku/tiku_json_20221129.json";
     let 题目_完整题目 = className("android.view.View").id("app").findOne().child(2).text();// 这里匹配出全部挖空
@@ -171,18 +161,15 @@ function 答题一次() {
     let json = res.body.json();
     // log(json[题目_完整题目])//取数组内容
     // log(json[题目_完整题目].length) //取数量 
-    log("调试模式:题目★" + 题目_完整题目)
-    log("调试模式:答案★" + json[题目_完整题目][0])//取数组内容  
+    // log("调试模式:题目★" + 题目_完整题目)
+    // log("调试模式:答案★" + json[题目_完整题目][0])//取数组内容  
     if (textContains(".单选题").exists()) {
         if (json[题目_完整题目]) {
             if (textContains(json[题目_完整题目][0])) {
-                // textContains(json[题目_完整题目][0]).findOne().parent().click()
-                // log(click(textContains(json[题目_完整题目][0]).findOne().bounds().centerX(), textContains(json[题目_完整题目][0]).findOne().bounds().centerY()))
+                log("调试模式:题目★" + 题目_完整题目 + "★答案★" + json[题目_完整题目][0] + "★");
                 if (textContains(json[题目_完整题目][0]).click()) {
-                    log("点击方案A");
                     textContains(json[题目_完整题目][0]).click();
                 } else {
-                    log("点击方案B");
                     while (!click(json[题目_完整题目][0]));
                 };
             } else {
@@ -195,134 +182,98 @@ function 答题一次() {
 
     } else if (textContains(".判断题").exists()) {
         if (json[题目_完整题目]) {
+            log("调试模式:题目★" + 题目_完整题目 + "★答案★" + json[题目_完整题目][0] + "★");
             text(json[题目_完整题目][0]).click();
-        } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
+        } else {
+            log("此题无答案:★" + 题目_完整题目 + "★");
+        };
     } else if (textContains(".多选题").exists()) {
         if (json[题目_完整题目]) {
             if (json[题目_完整题目]) {
-                for (var i = 0; i <= json[题目_完整题目].length; i++) {
+                for (var i = 0; i <= json[题目_完整题目].length - 1; i++) {
+                    log("调试模式:题目★" + (i + 1) + "★" + 题目_完整题目 + "★答案★" + json[题目_完整题目][i] + "★");
                     textContains(json[题目_完整题目][i]).click();
                 };
             } else {
                 log("没有此题:★" + 题目_完整题目 + "★");
             };
         } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
+
     };
     return true;
 };
 // *********************
-// 自动爬题
+// 自动答题
 // *********************
-function 自动功能_爬题() {
+
+function 自动答题_项目() {
     while (true) {
-        取出一个题的全部内容();
-        className("android.view.View").text("下一题").findOne(500).click();
-        sleep("200");
+        项目_答题一次();
+        sleep("1000");
+        className("android.widget.TextView").text("下一题").findOne(500).click();
+        sleep("100");
         if (id("tishi2").text("此为最后一题").exists()) {
+            className("android.view.View").desc("我知道了").waitFor();
             className("android.view.View").desc("我知道了").findOne().parent().click();
-            // app.viewFile("/sdcard/zuoxiaozi_data.zip");//打开文件
+
+            className("android.view.View").text("提交作业").waitFor();
+            className("android.view.View").text("提交作业").findOne().click();
+
+            id("tishi").text("你已全部完成本次作业/考试，确认要交卷吗？").waitFor();
+            className("android.view.View").desc("确定").findOne().click();
             break;
         };
     };
 };
-function 取出一个题的全部内容() {
-    var json库 = {};
-    let 题目_完整题目 = className("android.view.View").id("app").findOne().child(2).text();
-    log(题目_完整题目);
-    var 题目_取选项数 = className("android.view.View").id("app").findOne().child(3);
-    if (题目_取选项数.childCount() == 2) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
+
+
+function 项目_答题一次() {
+    // 判断题型
+    var 题库http = "https://jzzx.top/0mk/0tiku/项目题库.json";
+    let 题目_完整题目 = className("android.view.View").id("q-app").findOne().child(0).child(1).child(0).child(0).child(0).child(0).child(0).child(0).child(1).text();// 这里匹配出全部挖空
+    let res = http.get(题库http, { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+    let json = res.body.json();
+    // log(json[题目_完整题目])//取数组内容
+    // log(json[题目_完整题目].length) //取数量 
+    // log("调试模式:题目★" + 题目_完整题目)
+    // log("调试模式:答案★" + json[题目_完整题目][0])//取数组内容
+    if (textContains("单选").exists()) {
+        if (json[题目_完整题目]) {
+            if (textContains(json[题目_完整题目][0])) {
+                log("调试模式:题目★" + 题目_完整题目 + "★答案★" + json[题目_完整题目][0] + "★");
+                if (textContains(json[题目_完整题目][0]).click()) {
+                    textContains(json[题目_完整题目][0]).click();
+                } else {
+                    while (!click(json[题目_完整题目][0]));
+                };
+            } else {
+                log("请手动点击答案:" + json[题目_完整题目][0])
+            };
+        } else {
+            log("此题无答案:★" + 题目_完整题目 + "★");
+        };
+    } else if (textContains("判断").exists()) {
+        if (json[题目_完整题目]) {
+            log("调试模式:题目★" + 题目_完整题目 + "★答案★" + json[题目_完整题目][0] + "★");
+            text(json[题目_完整题目][0]).click();
+        } else { log("此题无答案:★" + 题目_完整题目 + "★"); };
+    } else if (textContains("多选").exists()) {
+        if (json[题目_完整题目]) {
+            if (json[题目_完整题目]) {
+                for (var i = 0; i <= json[题目_完整题目].length - 1; i++) {
+                    log("调试模式:题目★" + (i + 1) + "★" + 题目_完整题目 + "★答案★" + json[题目_完整题目][i] + "★");
+                    className("android.view.View").textContains(json[题目_完整题目][i]).clickable(true).findOne().click();
+                };
+            } else {
+                log("没有此题:★" + 题目_完整题目 + "★");
+            };
+        } else {
+            log("此题无答案:★" + 题目_完整题目 + "★");
+        };
+    } else {
+        log("无此类型");
     };
-    if (题目_取选项数.childCount() == 3) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    if (题目_取选项数.childCount() == 4) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        let 选项四 = className("android.view.View").id("app").findOne().child(3).child(3).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    if (题目_取选项数.childCount() == 5) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        let 选项四 = className("android.view.View").id("app").findOne().child(3).child(3).child(1).text();
-        let 选项五 = className("android.view.View").id("app").findOne().child(3).child(4).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"', '"' + 选项五 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    if (题目_取选项数.childCount() == 6) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        let 选项四 = className("android.view.View").id("app").findOne().child(3).child(3).child(1).text();
-        let 选项五 = className("android.view.View").id("app").findOne().child(3).child(4).child(1).text();
-        let 选项六 = className("android.view.View").id("app").findOne().child(3).child(5).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"', '"' + 选项五 + '"', '"' + 选项六 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    if (题目_取选项数.childCount() == 7) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        let 选项四 = className("android.view.View").id("app").findOne().child(3).child(3).child(1).text();
-        let 选项五 = className("android.view.View").id("app").findOne().child(3).child(4).child(1).text();
-        let 选项六 = className("android.view.View").id("app").findOne().child(3).child(5).child(1).text();
-        let 选项七 = className("android.view.View").id("app").findOne().child(3).child(6).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"', '"' + 选项五 + '"', '"' + 选项六 + '"', '"' + 选项七 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    if (题目_取选项数.childCount() == 8) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        let 选项四 = className("android.view.View").id("app").findOne().child(3).child(3).child(1).text();
-        let 选项五 = className("android.view.View").id("app").findOne().child(3).child(4).child(1).text();
-        let 选项六 = className("android.view.View").id("app").findOne().child(3).child(5).child(1).text();
-        let 选项七 = className("android.view.View").id("app").findOne().child(3).child(6).child(1).text();
-        let 选项八 = className("android.view.View").id("app").findOne().child(3).child(7).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"', '"' + 选项五 + '"', '"' + 选项六 + '"', '"' + 选项七 + '"', '"' + 选项八 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    if (题目_取选项数.childCount() == 9) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        let 选项四 = className("android.view.View").id("app").findOne().child(3).child(3).child(1).text();
-        let 选项五 = className("android.view.View").id("app").findOne().child(3).child(4).child(1).text();
-        let 选项六 = className("android.view.View").id("app").findOne().child(3).child(5).child(1).text();
-        let 选项七 = className("android.view.View").id("app").findOne().child(3).child(6).child(1).text();
-        let 选项八 = className("android.view.View").id("app").findOne().child(3).child(7).child(1).text();
-        let 选项九 = className("android.view.View").id("app").findOne().child(3).child(8).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"', '"' + 选项五 + '"', '"' + 选项六 + '"', '"' + 选项七 + '"', '"' + 选项八 + '"', '"' + 选项九 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    if (题目_取选项数.childCount() == 10) {
-        let 选项一 = className("android.view.View").id("app").findOne().child(3).child(0).child(1).text();
-        let 选项二 = className("android.view.View").id("app").findOne().child(3).child(1).child(1).text();
-        let 选项三 = className("android.view.View").id("app").findOne().child(3).child(2).child(1).text();
-        let 选项四 = className("android.view.View").id("app").findOne().child(3).child(3).child(1).text();
-        let 选项五 = className("android.view.View").id("app").findOne().child(3).child(4).child(1).text();
-        let 选项六 = className("android.view.View").id("app").findOne().child(3).child(5).child(1).text();
-        let 选项七 = className("android.view.View").id("app").findOne().child(3).child(6).child(1).text();
-        let 选项八 = className("android.view.View").id("app").findOne().child(3).child(7).child(1).text();
-        let 选项九 = className("android.view.View").id("app").findOne().child(3).child(8).child(1).text();
-        let 选项十 = className("android.view.View").id("app").findOne().child(3).child(9).child(1).text();
-        var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"', '"' + 选项五 + '"', '"' + 选项六 + '"', '"' + 选项七 + '"', '"' + 选项八 + '"', '"' + 选项九 + '"', '"' + 选项十 + '"'];
-        files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
-    };
-    // json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', '"' + 选项四 + '"'];
-    // var text = json库[题目_完整题目] = ['"' + 选项一 + '"', '"' + 选项二 + '"', '"' + 选项三 + '"', 选项四];
-    // files.append("/sdcard/zuoxiaozi_data.zip", '"' + 题目_完整题目 + '":[' + text + "],\n");
+    return true;
 };
 
 
@@ -394,7 +345,7 @@ function checkid() { //检查id函数
             //——————————————————————————————————
             let 结果i = 到期时间() - (网络时间())
             if (结果i > 0) {
-                toastLog("到期时间:" + 服务器一到期时间) 
+                toastLog("到期时间:" + 服务器一到期时间)
                 alert("支持课程:\n军事理论综合版\noffice高校办公\n演讲与口才\n走进航空航天\n关爱生命急救与自救技能");
                 功能权限 = true;
 
@@ -475,10 +426,10 @@ function 关闭每日广告() {
 
 
 var 循环总次数 = 0;
+let flag = false;
+var 次数 = 1;
 function 返回首页() {
     sleep(1000);
-    let flag = false;
-    var 次数 = 1;
     while (!flag) {
         if (text("学习室").exists()) {
             console.info("返回首页了")
@@ -486,26 +437,26 @@ function 返回首页() {
             break;
         }
         console.warn("返回主页");
-        次数 = 次数 + 1
+        次数 = (次数 + 1);
         sleep(1000);
         if (次数 > 5) {
             console.log("正在重启APP")
             if (!(launchApp(decodeURI("%E5%86%9B%E8%81%8C%E5%9C%A8%E7%BA%BF")) || launch('com.moocxuetang'))) { }//启动APP
             // sleep(2000)
-            循环总次数 = 循环总次数 + 1
+            循环总次数 = (循环总次数 + 1);
             sleep(1000)
-            log(循环总次数)
+            log(循环总次数);
             if (循环总次数 > 3) {
-                console.log("重启3次失败，建议重启手机后再试")
+                console.log("重启3次失败，建议重启手机后再试");
                 exit();
             }
             if (id("tvSkip").className("android.widget.TextView").findOne(5000) != null) { //跳过开屏
                 while (!click("5s跳过"));
-                返回首页()
+                返回首页();
             }
         }
-        back()
-        sleep(1000)
+        back();
+        sleep(1000);
     };
 };
 
@@ -520,26 +471,3 @@ function 日志控制台() {//设置控制台位置
 };
 
 
-
-// threads.start(function () {//启动另一个线程
-//     while (true) {
-//         sleep(10000);
-//         toast("弹窗检测....")
-//         if (id("tvRight").exists()) {
-//             text("不，继续学习").click()
-//             toastLog("选择继续学习")
-//         }
-//         if (id("exo_player_error_btn_id").text("播放异常,视频地址异常，或者网络不可用").exists()) {
-//             id("exo_player_error_btn_id").text("播放异常,视频地址异常，或者网络不可用").findOne().click()
-//             toastLog("选择重新播放")
-//         }
-//         if (className("android.widget.TextView").text("您当前网络不是wifi，是否继续观看").exists()) {
-//             id("button1").findOne().click()
-//             toastLog("选择继续观看")
-//         }
-//         if (text("继续")) {//默认使用数据网络
-//             click("继续");
-//             click("确定");
-//         }
-//     }
-// });
