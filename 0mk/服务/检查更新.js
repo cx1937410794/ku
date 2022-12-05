@@ -13,9 +13,9 @@ var 自身版本名称 = packageInfo.versionName
 // https://zuoxiaozi.lanzouv.com/b03n9vqle
 threads.start(function () {
     更新功能(
-        "iRBM90gnw1be",
-        "1.重新打造笔记页面\n2.新增微/Q/支刷步数功能\n3.优化底层代码\n4.笔记输入“进入助手左”保存，下次打开直接进入助手(根据个人需求使用)",
-        "101"
+        "iN7bg0hwbfij",
+        "1.启动器删减刷步数功能\n2.优化底层代码\n3.提升服务器稳定性",
+        "102"
     );
 });
 
