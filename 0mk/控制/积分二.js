@@ -184,7 +184,7 @@ var 文章_阅读_获取积分失败;
 function 函数_文章阅读(num) {
     for (a = 1; a <= num; a++) {
         if (!文章_阅读_获取积分失败 == true) {
-            sleep(2000); 
+            sleep(2000);
             if (id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne(3000) != null) {//列表文章名字是否存在
                 var 组件_文章名字 = id("tvDesc").className("android.widget.TextView").drawingOrder("2").findOne().text(); //toastLog(title);
                 if (组件_文章名字 != null) {
