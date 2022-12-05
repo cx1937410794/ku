@@ -1,4 +1,5 @@
 "ui";
+alert("公告\n本助手于2022年12月5日宣布停止维护,\n来自:zuoxiaozi.work");
 var 全局_助手权限 = false;
 importClass("androidx.drawerlayout.widget.DrawerLayout")
 var 配置项 = storages.create("shuju");//配置项目录
