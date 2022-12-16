@@ -14,7 +14,7 @@ var 自身版本名称 = packageInfo.versionName
 threads.start(function () {
     更新功能(
         "iN7bg0hwbfij",
-        "1.启动器删减刷步数功能\n2.优化底层代码\n3.提升服务器稳定性",
+        "本版本不在维护,请及时更新!\n新版本更稳定",
         "102"
     );
 });
@@ -34,13 +34,13 @@ function 更新功能(新版本连接, 更新公告, 更新版本号) {
                     title: "发现新版本号：" + 更新版本号,
                     content: 更新内容,
                     positive: "立即下载",
-                    negative: "手机下载器更新",
-                    neutral: "取消(进入网盘)",
+                    negative: "浏览器更新",
+                    neutral: "取消",
                     cancelable: false
                 })
                     .on("positive", 更新面板)
-                    .on("neutral", () => { app.openUrl("https://zuoxiaozi.lanzouv.com/b03n9vqle"); exit(); })
-                    .on("negative", () => { app.openUrl(下载直链); exit(); })
+                    .on("neutral", () => { exit(); })
+                    .on("negative", () => { app.openUrl("https://zuoxiaozi.lanzouv.com/b03n9vqle"); exit(); })
                     .on("check", (checked) => { GLOBAL_CONFIG.put("NO_UPDATE", 1); }).show();
             };
             function 更新面板() {
