@@ -81,15 +81,12 @@ function 设备序列号() {
     }
     return id;
 };
-ui.登录按钮.on("click", () => {
-    toast("正在登录");
-    登录线程();
-});
+ui.登录按钮.on("click", () => { toast("正在登录"); 登录线程(); });
 function 登录线程() {
     threads.start(function () {
         let 到期时间变量;
         function 到期时间() {
-            let res = http.get("http://zuoxiaozi.work/0mk/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { toastLog("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             //无设备
@@ -116,7 +113,7 @@ function 登录线程() {
 
             var storage = storages.create("左小子临时备忘录"); //模拟器用户
             var content = storage.get("content");
-            let res = http.get("http://zuoxiaozi.work/0mk/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { toastLog("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             let thisTime = json[设备序列号()][0];
