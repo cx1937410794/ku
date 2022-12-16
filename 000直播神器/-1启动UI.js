@@ -5,7 +5,6 @@ if (r) {
     alert("请勿试用代理");
     exit
 };
-
 function isWifiProxy(context) {
     importClass(android.os.Build);
     importClass(android.text.TextUtils);
