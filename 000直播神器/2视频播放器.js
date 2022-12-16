@@ -11,7 +11,7 @@ ui.layout(
 );
 
 
-
-//播放网络视频链接
-ui.video.setVideoURI(android.net.Uri.parse(idlujing.get("主播链接")));
-ui.video.start();
+threads.start(function () {    //播放网络视频链接
+    ui.video.setVideoURI(android.net.Uri.parse(idlujing.get("主播链接")));
+    ui.video.start();
+});
