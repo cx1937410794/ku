@@ -82,7 +82,7 @@ function 设备序列号() {
     return id;
 };
 ui.登录按钮.on("click", () => {
-    toast("正在登录")
+    toast("正在登录");
     登录线程();
 });
 function 登录线程() {
