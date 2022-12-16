@@ -1,0 +1,74 @@
+"ui";
+var idlujing = storages.create("shuju"); //被存的数据路径
+ui.statusBarColor("#000000");
+ui.layout(
+    <vertical gravity="center_horizontal">
+        <VideoView id="video" w="*" h="*" />
+        <frame >
+            <text id="text" w="auto" layout_gravity="left" />
+        </frame>
+        <horizontal margin="10px 40px 10px 40px" gravity="center">
+            <button id="video_start_pause" text="暂停" />
+        </horizontal>
+    </vertical>
+);
+
+
+function 播放视频() {
+    threads.start(function () {
+        // log(idlujing.get("主播链接"))
+        try {
+            var path = idlujing.get("主播链接");
+            ui.video.setVideoPath(path);
+            ui.video.start();
+        } catch (e) {
+            toast("没有原视频，");
+            toast("请自行点击选择，");
+            toast("选择视频文件播放");
+        };
+    });
+}
+播放视频();
+threads.start(function () {
+    while (true) {
+        ui.run(() => {
+            ui.text.setText("已播放" + (ui.video.getCurrentPosition() / 1000).toString() + "秒");
+        });
+    };
+});
+ui.video_start_pause.setOnClickListener(function () {
+    if (ui.video.isPlaying()) {
+        ui.run(() => {
+            ui.video.pause();
+            ui.video_start_pause.setText("播放");
+        });
+    } else {
+        ui.run(() => {
+            ui.video.start();
+            ui.video_start_pause.setText("暂停");
+        });
+    };
+});
+var fx, fy, cx, cy;
+ui.video.setOnTouchListener(function (view, event) {
+    switch (event.getAction()) {
+        case event.ACTION_DOWN:
+            fx = event.getRawX();
+            fy = event.getRawY();
+            return true;
+
+        case event.ACTION_MOVE:
+            return true;
+
+        case event.ACTION_UP:
+            cx = event.getRawX() - fx;
+            cy = event.getRawY() - fy;
+            if (Math.sqrt(cx * cx + cy * cy) > 50) {
+                ui.run(() => {
+                    ui.video.seekTo(ui.video.getCurrentPosition() + Math.round(cx * 10));
+                });
+            };
+            return true;
+    }
+    return true;
+}); 
