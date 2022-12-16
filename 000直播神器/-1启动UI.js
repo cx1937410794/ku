@@ -81,7 +81,10 @@ function 设备序列号() {
     }
     return id;
 };
-ui.登录按钮.on("click", () => { 登录线程(); });
+ui.登录按钮.on("click", () => {
+    toast("正在登录")
+    登录线程();
+});
 function 登录线程() {
     threads.start(function () {
         let 到期时间变量;
