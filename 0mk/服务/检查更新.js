@@ -18,7 +18,6 @@ threads.start(function () {
         "102"
     );
 });
-
 function 更新功能(新版本连接, 更新公告, 更新版本号) {
     if (自身版本名称 == 更新版本号) { toastLog("最新版本！"); } else {
         threads.start(function () {
