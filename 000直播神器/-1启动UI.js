@@ -161,7 +161,7 @@ function 客服一号线程() {
         function 联系客服() {
             try {
                 app.startActivity({
-                    action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=" + "1937410794",
+                    action: "android.intent.action.VIEW", data: "mqqapi://card/show_pslcard?&uin=" + "",
                 });
             } catch (e) { toast("您还没有安装QQ"); };
         }; 联系客服();
