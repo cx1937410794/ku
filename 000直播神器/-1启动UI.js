@@ -189,7 +189,7 @@ function 弹窗公告() {
                 弹窗公告 = true;
                 return;
             };
-            toast('公告15秒后自动关闭');
+            // toast('公告15秒后自动关闭');
             var d = dialogs.build({
                 title: "公告",
                 content: text,
