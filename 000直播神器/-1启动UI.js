@@ -177,7 +177,7 @@ ui.第三方播放器按钮.on("click", () => { 第三方播放器函数(); });
 function 第三方播放器函数() { app.openUrl("https://www.wandoujia.com/apps/8076541/download/dot?spm=aligames_platform_ug.wdj_seo.0.0.521d40aeBUBkS7&ch=detail_normal_dl"); };
 
 ui.说明按钮.on("click", () => {
-    alert("");
+    alert("播放器的选择:\n如果手机自带的视频播放器不能用,可以去手机商店搜索'播放器',我推荐Player等,不限制\n\n平台的汇总方面:\n因每个平台都是按照分钟开会员,确实很不爽,这边就在黑科技的加持下把平台全部聚集到一块,顺带一个良心的价格!");
 });
 
 function 弹窗公告() {
