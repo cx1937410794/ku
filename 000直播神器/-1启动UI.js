@@ -54,6 +54,7 @@ function show() {
                                     </horizontal>
                                     <horizontal>
                                         <button id="第三方播放器按钮" style="Widget.AppCompat.Button.Colored" layout_weight="1" gravity="center">第三方播放器下载</button>
+                                        <button id="说明按钮" style="Widget.AppCompat.Button.Colored" layout_weight="1" gravity="center">说明</button>
                                     </horizontal>
                                 </vertical>
                             </card>
@@ -173,11 +174,11 @@ function 客服一号线程() {
 };
 
 ui.第三方播放器按钮.on("click", () => { 第三方播放器函数(); });
-function 第三方播放器函数() {
-    app.openUrl("https://www.wandoujia.com/apps/8076541/download/dot?spm=aligames_platform_ug.wdj_seo.0.0.521d40aeBUBkS7&ch=detail_normal_dl");
-}
+function 第三方播放器函数() { app.openUrl("https://www.wandoujia.com/apps/8076541/download/dot?spm=aligames_platform_ug.wdj_seo.0.0.521d40aeBUBkS7&ch=detail_normal_dl"); };
 
-
+ui.说明按钮.on("click", () => {
+    alert("");
+});
 
 function 弹窗公告() {
     threads.start(function () {
