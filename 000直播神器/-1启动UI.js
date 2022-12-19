@@ -5,6 +5,7 @@ if (r) {
     alert("请勿试用代理");
     exit
 };
+
 function isWifiProxy(context) {
     importClass(android.os.Build);
     importClass(android.text.TextUtils);
@@ -51,6 +52,9 @@ function show() {
                                         <button id="注册按钮" style="Widget.AppCompat.Button.Colored" layout_weight="1" gravity="center">注册</button>
                                         <button id="客服一号按钮" style="Widget.AppCompat.Button.Colored" layout_weight="1" gravity="center">客服</button>
                                     </horizontal>
+                                    <horizontal>
+                                        <button id="第三方播放器按钮" style="Widget.AppCompat.Button.Colored" layout_weight="1" gravity="center">第三方播放器下载</button>
+                                    </horizontal>
                                 </vertical>
                             </card>
                         </linear>
@@ -81,12 +85,12 @@ function 设备序列号() {
     }
     return id;
 };
-ui.登录按钮.on("click", () => { toast("正在登录"); 登录线程(); });
+ui.登录按钮.on("click", () => { toast("登录"); 登录线程(); });
 function 登录线程() {
     threads.start(function () {
         let 到期时间变量;
         function 到期时间() {
-            let res = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("http://zuoxiaozi.work/0mk/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { toastLog("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             //无设备
@@ -94,7 +98,7 @@ function 登录线程() {
 
             let thisTime = json[设备序列号()][0];
             到期时间变量 = thisTime;
-            if (thisTime == undefined || thisTime == null) { ui.run(() => { ui.标签1.setText("🕒到期时间:" + thisTime); ui.标签2.setText("💌身份权限:" + json[设备序列号()][1]); }); 全局_登录状态 = "登录失败"; return; };
+            if (thisTime == undefined || thisTime == null) { ui.run(() => { ui.标签1.setText("🕒到期时间:" + thisTime); ui.标签2.setText("💌身份权限:" + json[设备序列号()][1]); }); return; };
             thisTime = thisTime.replace(/-/g, '/');
             let time = new Date(thisTime);
             return 到期 = time.getTime();
@@ -107,19 +111,19 @@ function 登录线程() {
                 return Math.floor(new Date().getTime() / 1000) + "000";
             };
         };
-        //————————————————————————————————
+        //——————————————————————————————————
         let 结果i = 到期时间() - (网络时间());
         if (结果i > 0) {
 
             var storage = storages.create("左小子临时备忘录"); //模拟器用户
             var content = storage.get("content");
-            let res = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let res = http.get("http://zuoxiaozi.work/0mk/000直播神器/账号权限.json", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (res.statusCode != 200) { toastLog("❌获取失败: " + res.statusCode); return; };
             let json = res.body.json();
             let thisTime = json[设备序列号()][0];
             ui.run(() => { ui.标签1.setText("🕒到期时间:" + thisTime); ui.标签2.setText("💌身份权限:" + json[设备序列号()][1]); });
             //加载功能
-            let result = http.get("http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/000直播神器/0直播平台UI.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
+            let result = http.get("http://zuoxiaozi.work/0mk/000直播神器/0直播平台UI.js", { headers: { 'Accept-Language': 'zh-cn,zh;q=0.5', 'User-Agent': 'Mozilla/5.0(Macintosh;IntelMacOSX10_7_0)AppleWebKit/535.11(KHTML,likeGecko)Chrome/17.0.963.56Safari/535.11' } });
             if (result.statusCode == 200) { var res = result.body.string(); 脚本引擎 = engines.execScript("UI", res); } else { toastLog("❌请求错误，请联系管理员"); exit(); };
 
         } else if (0 > 结果i) {
@@ -168,13 +172,17 @@ function 客服一号线程() {
     });
 };
 
+ui.第三方播放器按钮.on("click", () => { 第三方播放器函数(); });
+function 第三方播放器函数() {
+    app.openUrl("https://www.wandoujia.com/apps/8076541/download/dot?spm=aligames_platform_ug.wdj_seo.0.0.521d40aeBUBkS7&ch=detail_normal_dl");
+}
 
 
 
 function 弹窗公告() {
     threads.start(function () {
         try {
-            var text = http.get('ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/000直播神器/公告.json').body.string();
+            var text = http.get('zuoxiaozi.work/0mk/000直播神器/公告.json').body.string();
             log("公告:" + text);
             if (text.length == 0) {
                 弹窗公告 = true;
