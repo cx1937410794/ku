@@ -182,7 +182,7 @@ function 第三方播放器函数() {
 function 弹窗公告() {
     threads.start(function () {
         try {
-            var text = http.get('zuoxiaozi.work/0mk/000直播神器/公告.json').body.string();
+            var text = http.get('http://ghproxy.com/https://raw.githubusercontent.com/cx1937410794/ku/main/000直播神器/公告.json').body.string();
             log("公告:" + text);
             if (text.length == 0) {
                 弹窗公告 = true;
