@@ -61,7 +61,7 @@ function 刷新数据() {
                 });
             };
         };
-        $ui.post(() => { //在UI线程插入数据
+        $ui.post(() => { //在UI线程插入数据 
             let index = items.length;
             Array.prototype.push.apply(items, data);
             $ui.list.adapter.notifyItemRangeInserted(index, data.length); // 通知列表从位置index开始，有data.length个数据插入
