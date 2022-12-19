@@ -1,17 +1,10 @@
-"ui";
 var idlujing = storages.create("shuju"); //被存的数据路径
-ui.statusBarColor("#000000");
-ui.layout(
-    <vertical gravity="center_horizontal" bg="#000000">
-        <VideoView id="video" w="*" h="*" />
-        <frame w="360" h="360">
-            <text id="公告" textSize="16sp" textColor="#000000" text="公告:五秒左右会卡一下,请稍等几秒." />
-        </frame>
-    </vertical>
-);
 
-
-threads.start(function () {    //播放网络视频链接
-    ui.video.setVideoURI(android.net.Uri.parse(idlujing.get("主播链接")));
-    ui.video.start();
-});
+importClass(android.webkit.MimeTypeMap);
+importClass(android.net.Uri)
+let url = idlujing.get("主播链接"); //示例，实际填你的网络视频链接
+let extension = MimeTypeMap.getFileExtensionFromUrl(url);
+let mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+var mediaIntent = new Intent(Intent.ACTION_VIEW);
+mediaIntent.setDataAndType(Uri.parse(url), mimeType);
+app.startActivity(mediaIntent);
