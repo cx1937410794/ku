@@ -72,6 +72,6 @@ function 刷新数据() {
 
 
 ui.emitter.on("resume", function () {
-    toastLog("刷新数据");
+    // toastLog("刷新数据");
     刷新数据();
 });
