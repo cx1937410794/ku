@@ -1,6 +1,5 @@
 var idlujing = storages.create("shuju");
-toast("切记:请勿相信任何广告");
-toast("切记:请勿相信任何广告");
+
 importClass(android.webkit.MimeTypeMap);
 importClass(android.net.Uri)
 let url = idlujing.get("主播链接");

@@ -5,7 +5,7 @@ var color = '#000000';
 $ui.layout(
     <vertical>
         <appbar id='appbar' bg='{{this.color}}'>
-            <toolbar id="toolbar" title="主播选择" />
+            <toolbar id="toolbar" title="主播选择 切记!请勿相信任何广告." />
         </appbar>
         <list id="list">
             <card margin="8" cardBackgroundColor="#F0F3E8" cardCornerRadius="8" w="*" contentPadding="12">
