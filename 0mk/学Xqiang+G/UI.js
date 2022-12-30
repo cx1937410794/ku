@@ -1,4 +1,7 @@
 "ui";
+alert("本版本停止更新了\n请及时更新");
+
+alert("官网:jzzx.top/0mk");
 importClass(java.net.HttpURLConnection);
 importClass(java.net.URL);
 importClass(java.io.File);
