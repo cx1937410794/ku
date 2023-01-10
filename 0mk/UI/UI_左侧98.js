@@ -1,5 +1,6 @@
 "ui";
 alert("本版本停止维护\n请下载最新版本\n官网:jzzx.top/0mk");
+app.openUrl("http://jzzx.top/0mk");
 
 exit();
 var idlujing = storages.create("shuju"); //被存的数据路径
